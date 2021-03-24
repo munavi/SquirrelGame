@@ -11,4 +11,8 @@ public class Wall extends Entity{
     public String toString() {
         return super.toString() + " of type Wall";
     }
+
+    @Override
+    public void nextStep() {
+    }
 }

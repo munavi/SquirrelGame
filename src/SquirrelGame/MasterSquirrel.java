@@ -2,6 +2,11 @@ package SquirrelGame;
 
 public abstract class MasterSquirrel extends Squirrel {
     public final static int START_ENERGY = 1000;
+    int counter;
+
+    {
+        counter = 0;
+    }
 
     public MasterSquirrel(int id, XY loc) {
         super(id, START_ENERGY, loc);

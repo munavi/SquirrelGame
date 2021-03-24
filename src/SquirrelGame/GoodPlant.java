@@ -11,4 +11,8 @@ public class GoodPlant extends Entity {
     public String toString() {
         return super.toString() + " of type core.GoodPlant ";
     }
+
+    @Override
+    public void nextStep() {
+    }
 }
