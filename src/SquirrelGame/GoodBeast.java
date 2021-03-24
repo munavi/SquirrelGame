@@ -10,4 +10,8 @@ public class GoodBeast extends Entity {
     public String toString() {
         return super.toString() + " of type GoodBeast ";
     }
+
+    public void nextStep() {
+        this.location = this.location.add(XY.randomDirection());
+    }
 }

@@ -10,4 +10,8 @@ public class MiniSquirrel extends Squirrel{
     public MasterSquirrel getMaster(){
         return master;
     }
+
+    public void nextStep() {
+        this.location = this.location.add(XY.randomDirection());
+    }
 }

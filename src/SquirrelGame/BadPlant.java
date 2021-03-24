@@ -11,4 +11,9 @@ public class BadPlant extends Entity {
     public String toString() {
         return super.toString() + " of type BadPlant ";
     }
+
+    @Override
+    public void nextStep() {
+
+    }
 }

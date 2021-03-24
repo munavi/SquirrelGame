@@ -1,9 +1,9 @@
 package SquirrelGame;
 
-public class Entity {
+public abstract class Entity {
     private final int id;
     private int energy;
-    private final XY location;
+    protected  XY location;
     private EntitySet set;
 
     public Entity(int id, int energy, XY loc){
@@ -45,4 +45,6 @@ public class Entity {
         }
         return false;
     }
+
+    public abstract void nextStep();
 }

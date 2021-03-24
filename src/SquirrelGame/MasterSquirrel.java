@@ -1,6 +1,6 @@
 package SquirrelGame;
 
-public class MasterSquirrel extends Squirrel {
+public abstract class MasterSquirrel extends Squirrel {
     public final static int START_ENERGY = 1000;
 
     public MasterSquirrel(int id, XY loc) {

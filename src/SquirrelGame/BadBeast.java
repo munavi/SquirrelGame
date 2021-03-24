@@ -11,4 +11,8 @@ public class BadBeast extends Entity {
         return super.toString() + " of type BadBeast ";
     }
 
+    @Override
+    public void nextStep() {
+        this.location = this.location.add(XY.randomDirection());
+    }
 }
