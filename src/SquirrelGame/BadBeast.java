@@ -7,4 +7,8 @@ public class BadBeast extends Entity {
         super(id, START_ENERGY, loc);
     }
 
+    public String toString() {
+        return super.toString() + " of type BadBeast ";
+    }
+
 }

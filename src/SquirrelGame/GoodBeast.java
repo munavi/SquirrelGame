@@ -6,4 +6,8 @@ public class GoodBeast extends Entity {
     public GoodBeast(int id, XY loc){
         super(id, START_ENERGY, loc);
     }
+
+    public String toString() {
+        return super.toString() + " of type GoodBeast ";
+    }
 }

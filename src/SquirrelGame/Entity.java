@@ -1,9 +1,9 @@
 package SquirrelGame;
 
 public class Entity {
-    private int id;
+    private final int id;
     private int energy;
-    private XY location;
+    private final XY location;
 
     public Entity(int id, int energy, XY loc){
         this.id = id;
@@ -30,5 +30,12 @@ public class Entity {
         return energy += delta;
         }
         return energy -= delta;
+    }
+
+    public boolean equals(Object obj) { // ob zwei Entities diesselbe Entities implementieren
+        if (obj instanceof Entity) {
+            return obj.getClass() == this.getClass() && ((Entity) obj).getId() == this.getId();
+        }
+        return false;
     }
 }

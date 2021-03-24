@@ -14,4 +14,8 @@ public class MasterSquirrel extends Squirrel {
         }
         return false;
     }
+
+    public String toString(){
+        return super.toString() + " of type " + this.getClass();
+    }
 }
