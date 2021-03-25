@@ -12,6 +12,7 @@ public class GameState {
 
         System.out.println(container.toString());
 
+
         HandOperatedMasterSquirrel squirrel = new HandOperatedMasterSquirrel(5, new XY(0,1));
         squirrel.nextStep();
 
