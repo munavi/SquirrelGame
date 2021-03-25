@@ -14,6 +14,6 @@ public class BadPlant extends Entity {
 
     @Override
     public void nextStep() {
-
+        this.location = this.location.add(XY.randomDirection());
     }
 }

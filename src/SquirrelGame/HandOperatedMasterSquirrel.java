@@ -10,27 +10,24 @@ public class HandOperatedMasterSquirrel extends MasterSquirrel {
         super(id, loc);
     }
 
+
     @Override
     public void nextStep() {
         Scanner scanner = new Scanner(System.in);
         XY newLocation;
         char c = scanner.next(".").charAt(0);
-        switch (c) {
-            case 'a': // left
-                newLocation = getLocation().add(new XY(-1, 0));
-                break;
-            case 'w': //up
-                newLocation = getLocation().add(new XY(0,1));
-                break;
-            case 'd':// right
-                newLocation = getLocation().add(new XY(1,0));
-                break;
-            case 's': // down
-                newLocation = getLocation().add(new XY(0,-1));
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + c);
-        }
+        newLocation = switch (c) {
+// left
+            case 'a' -> getLocation().add(new XY(-1, 0));
+//up
+            case 'w' -> getLocation().add(new XY(0, 1));
+// right
+            case 'd' -> getLocation().add(new XY(1, 0));
+// down
+            case 's' -> getLocation().add(new XY(0, -1));
+            default -> throw new IllegalStateException("Unexpected value: " + c);
+        };
+        this.location = newLocation;
     }
 
 
