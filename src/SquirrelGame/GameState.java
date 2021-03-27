@@ -10,11 +10,13 @@ public class GameState {
         container.push(new Wall(4, new XY(7,7)));
         container.push(new HandOperatedMasterSquirrel(5, new XY(5,5)));
 
-        System.out.println(container.toString());
-
-
         HandOperatedMasterSquirrel squirrel = new HandOperatedMasterSquirrel(5, new XY(0,1));
-        squirrel.nextStep();
+
+        while(true){
+                container.nextStep();
+                System.out.println(container.toString());
+        }
+
 
 
 

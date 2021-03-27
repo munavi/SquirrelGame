@@ -4,7 +4,7 @@ package SquirrelGame;
 import java.util.Scanner;
 
 public class HandOperatedMasterSquirrel extends MasterSquirrel {
-
+    XY newLocation;
 
     public HandOperatedMasterSquirrel(int id, XY loc) {
         super(id, loc);
@@ -14,7 +14,6 @@ public class HandOperatedMasterSquirrel extends MasterSquirrel {
     @Override
     public void nextStep() {
         Scanner scanner = new Scanner(System.in);
-        XY newLocation;
         char c = scanner.next(".").charAt(0);
         newLocation = switch (c) {
 // left
@@ -27,8 +26,9 @@ public class HandOperatedMasterSquirrel extends MasterSquirrel {
             case 's' -> getLocation().add(new XY(0, -1));
             default -> throw new IllegalStateException("Unexpected value: " + c);
         };
-        this.location = newLocation;
     }
+
+    public XY newLocation(){return newLocation; }
 
 
 }

@@ -38,6 +38,22 @@ public class EntitySet {
         number--;
     }
 
+    public void nextStep(){
+        for(int i = 0; i<container.length;i++){
+            container[i].nextStep();
+
+            if(container[i] instanceof HandOperatedMasterSquirrel){
+                for(int j = 0; j<container.length;j++) {
+                    if(((HandOperatedMasterSquirrel) container[i]).newLocation == container[j].getLocation() && container[j] instanceof GoodPlant){
+                        container[i].updateEnergy(container[j].getEnergy());
+                    }
+                    container[i].location = ((HandOperatedMasterSquirrel) container[i]).newLocation;
+                }
+            }
+        }
+
+    }
+
     public String toString() {
         StringBuilder content = new StringBuilder();
 
