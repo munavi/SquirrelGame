@@ -28,7 +28,6 @@ public class HandOperatedMasterSquirrel extends MasterSquirrel {
         };
     }
 
-    public XY newLocation(){return newLocation; }
 
 
 }
