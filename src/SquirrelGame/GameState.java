@@ -12,10 +12,12 @@ public class GameState {
 
         HandOperatedMasterSquirrel squirrel = new HandOperatedMasterSquirrel(5, new XY(0,1));
 
-        while(true){
+        //while(true){
+        for(int i = 0, i < 15, i++){
                 container.nextStep();
                 System.out.println(container.toString());
         }
+        //}
 
 
 
