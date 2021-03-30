@@ -40,14 +40,19 @@ public class EntitySet {
 
     public void nextStep(){
         for(int i = 0; i<container.length;i++){
-            container[i].nextStep();
+            if (container[i]!= null) {
 
-            if(container[i] instanceof HandOperatedMasterSquirrel){
-                for(int j = 0; j<container.length;j++) {
-                    if(((HandOperatedMasterSquirrel) container[i]).newLocation == container[j].getLocation() && container[j] instanceof GoodPlant){
-                        container[i].updateEnergy(container[j].getEnergy());
+                container[i].nextStep();
+
+                if (container[i] instanceof HandOperatedMasterSquirrel) {
+                    for (int j = 0; j < container.length; j++) {
+                        if (container[j] instanceof GoodPlant && ((HandOperatedMasterSquirrel) container[i]).newLocation.equals(container[j].getLocation()) ) {
+                            container[i].updateEnergy(container[j].getEnergy());
+                            delete(container[j]);
+                            System.out.println("Eine Pflanze wurde gefressen");
+                        }
+                        container[i].location = ((HandOperatedMasterSquirrel) container[i]).newLocation;
                     }
-                    container[i].location = ((HandOperatedMasterSquirrel) container[i]).newLocation;
                 }
             }
         }

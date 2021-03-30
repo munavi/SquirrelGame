@@ -41,7 +41,7 @@ public final class XY {
         return new XY(xy.x + this.x, xy.y + this.y);
     }
 
-/*
+
     public boolean equals(Object o){
         if(this == o)
             return true;
@@ -50,7 +50,7 @@ public final class XY {
         XY xy = (XY)o;
         return this.x == xy.x && this.y  == xy.y;
     }
-*/
+
 
 
 }

@@ -21,6 +21,6 @@ public abstract class MasterSquirrel extends Squirrel {
     }
 
     public String toString(){
-        return super.toString() + " of type " + this.getClass();
+        return super.toString() + " of type " + this.getClass() + "Location: " + this.getLocation() + "Energy: " + this.getEnergy();
     }
 }

@@ -13,6 +13,7 @@ public class HandOperatedMasterSquirrel extends MasterSquirrel {
 
     @Override
     public void nextStep() {
+        System.out.println("Eingabe: ");
         Scanner scanner = new Scanner(System.in);
         char c = scanner.next(".").charAt(0);
         newLocation = switch (c) {
