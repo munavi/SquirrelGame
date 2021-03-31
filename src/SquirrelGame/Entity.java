@@ -12,6 +12,7 @@ public abstract class Entity {
     }
     public Entity setEntity(Entity set) {
         if (set == null){
+            System.out.flush();
             System.err.println(this + " has been removed from the set!");
             return null;
         }else{
