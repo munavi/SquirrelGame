@@ -3,6 +3,7 @@ package SquirrelGame;
 public class EntitySet {
     private final Entity[] container;
     private int number;
+    private boolean sort = false;
 
     public EntitySet(int size){
         number = 0;
@@ -16,7 +17,6 @@ public class EntitySet {
         }
         if (number < container.length){
             container[number++] = e;
-            e.setEntity(this);
         }
     }
 
@@ -27,13 +27,18 @@ public class EntitySet {
     public void delete(Entity e){
         for (int i = 0; i < number; i++) {
             if (container[i].equals(e)){
-                e.setEntity(null);
-                System.out.println(e + " has been removed from the set!");
+                container[i] = e.setEntity(null);
                 break;
             }
         }
+    }
+
+    public void sort(){
         for (int i = 0; i < number - 1; i++) { //System.arraycopy()?
-            container[i] = container[i + 1];
+            if(container[i] == null) {
+                container[i] = container[i + 1];
+                container[i+1] = null;
+            }
         }
         number--;
     }
@@ -49,6 +54,7 @@ public class EntitySet {
                         if (container[j] instanceof GoodPlant && ((HandOperatedMasterSquirrel) container[i]).newLocation.equals(container[j].getLocation()) ) {
                             container[i].updateEnergy(container[j].getEnergy());
                             delete(container[j]);
+                            sort = true;
                             System.out.println("Eine Pflanze wurde gefressen");
                         }
                         container[i].location = ((HandOperatedMasterSquirrel) container[i]).newLocation;
@@ -56,7 +62,10 @@ public class EntitySet {
                 }
             }
         }
-
+        if(sort){
+            sort();
+            sort = false;
+        }
     }
 
     public String toString() {

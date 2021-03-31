@@ -4,18 +4,20 @@ public abstract class Entity {
     private final int id;
     private int energy;
     protected  XY location;
-    private EntitySet set;
 
     public Entity(int id, int energy, XY loc){
         this.id = id;
         this.energy = energy;
         this.location = loc;
     }
-    public void setEntity(EntitySet set) {
+    public Entity setEntity(Entity set) {
         if (set == null){
             System.err.println(this + " has been removed from the set!");
+            return null;
+        }else{
+            return this;
         }
-        this.set = set;
+
     }
 
 
