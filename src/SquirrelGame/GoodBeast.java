@@ -8,7 +8,7 @@ public class GoodBeast extends Entity {
     }
 
     public String toString() {
-        return super.toString() + " of type GoodBeast ";
+        return super.toString() + " of type GoodBeast " + " ID: "+ this.getId() + " Location: " + this.getLocation() + " Energy: " + this.getEnergy();
     }
 
     public void nextStep() {

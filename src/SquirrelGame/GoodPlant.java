@@ -9,7 +9,7 @@ public class GoodPlant extends Entity {
     }
 
     public String toString() {
-        return super.toString() + " of type core.GoodPlant ";
+        return super.toString() + " of type core.GoodPlant " + " ID: "+ this.getId() + " Location: " + this.getLocation() + " Energy: " + this.getEnergy();
     }
 
     @Override

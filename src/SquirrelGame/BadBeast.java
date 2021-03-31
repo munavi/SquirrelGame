@@ -8,7 +8,7 @@ public class BadBeast extends Entity {
     }
 
     public String toString() {
-        return super.toString() + " of type BadBeast ";
+        return super.toString() + " of type BadBeast " + " ID: "+ this.getId() + " Location: " + this.getLocation() + " Energy: " + this.getEnergy();
     }
 
     @Override

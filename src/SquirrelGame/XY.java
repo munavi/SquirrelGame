@@ -22,7 +22,7 @@ public final class XY {
     }
 
     public String toString() {
-        return "XY" + "x= " + x + "y= " + y;
+        return "XY " + " x= " + x + " y= " + y;
     }
 
     public static XY randomDirection() {

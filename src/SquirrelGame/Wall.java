@@ -9,7 +9,7 @@ public class Wall extends Entity{
     }
 
     public String toString() {
-        return super.toString() + " of type Wall";
+        return super.toString() + " of type Wall" + " ID: "+ this.getId() + " Location: " + this.getLocation() + " Energy: " + this.getEnergy();
     }
 
     @Override

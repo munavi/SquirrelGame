@@ -9,11 +9,11 @@ public class BadPlant extends Entity {
 
 
     public String toString() {
-        return super.toString() + " of type BadPlant ";
+        return super.toString() + " of type BadPlant " + " ID: "+ this.getId() + " Location: " + this.getLocation() + " Energy: " + this.getEnergy();
     }
 
     @Override
     public void nextStep() {
-        this.location = this.location.add(XY.randomDirection());
+
     }
 }
