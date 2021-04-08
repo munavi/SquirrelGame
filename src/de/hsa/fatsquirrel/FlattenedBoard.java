@@ -11,6 +11,11 @@ public class FlattenedBoard implements EntityContext, BoardView{
 
 
     @Override
+    public EntityType getEntityType(int x, int y) {
+        return null;
+    }
+
+    @Override
     public XY getSize() {
         return board.getSize();
     }

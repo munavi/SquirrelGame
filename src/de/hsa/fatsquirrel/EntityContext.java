@@ -1,21 +1,21 @@
 package de.hsa.fatsquirrel;
 
 public interface EntityContext {
-    XY getSize();
+    public XY getSize();
 
-    void tryMove(MiniSquirrel miniSquirrel, XY moveDirection);
+    public void tryMove(MiniSquirrel miniSquirrel, XY moveDirection);
 
-    void tryMove(GoodBeast goodBeast, XY moveDirection);
+    public void tryMove(GoodBeast goodBeast, XY moveDirection);
 
-    void tryMove(BadBeast badBeast, XY moveDirection);
+    public void tryMove(BadBeast badBeast, XY moveDirection);
 
-    void tryMove(MasterSquirrel masterSquirrel, XY moveDirection);
+    public void tryMove(MasterSquirrel masterSquirrel, XY moveDirection);
 
-    PlayerEntity nearestPlayerEntity(XY pos);
+    public PlayerEntity nearestPlayerEntity(XY pos);
 
-    void kill(Entity entity);
+    public void kill(Entity entity);
 
-    void killAndReplace(Entity entity);
+    public void killAndReplace(Entity entity);
 
-    EntityType getEntityType(XY xy);
+    public EntityType getEntityType(XY xy);
 }

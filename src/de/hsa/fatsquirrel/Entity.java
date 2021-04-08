@@ -5,7 +5,7 @@ public abstract class Entity {
     private int energy;
     protected  XY position;
 
-    public Entity(int id, int energy, XY loc){
+    protected Entity(int id, int energy, XY loc){
         this.id = id;
         this.energy = energy;
         this.position = loc;
@@ -50,5 +50,5 @@ public abstract class Entity {
         return false;
     }
 
-    public abstract void nextStep();
+    public abstract void nextStep(); // hier steht im Klassendiagramm EntityContext context. Wieso?
 }
