@@ -1,4 +1,4 @@
-package SquirrelGame;
+package de.hsa.fatsquirrel;
 
 public class EntitySet {
     private final Entity[] container;
@@ -51,13 +51,13 @@ public class EntitySet {
 
                 if (container[i] instanceof HandOperatedMasterSquirrel) {
                     for (int j = 0; j < container.length; j++) {
-                        if (container[j] instanceof GoodPlant && ((HandOperatedMasterSquirrel) container[i]).newLocation.equals(container[j].getLocation()) ) {
+                        if (container[j] instanceof GoodPlant && ((HandOperatedMasterSquirrel) container[i]).newLocation.equals(container[j].getPosition()) ) {
                             container[i].updateEnergy(container[j].getEnergy());
                             delete(container[j]);
                             sort = true;
                             System.out.println("Eine Pflanze wurde gefressen");
                         }
-                        container[i].location = ((HandOperatedMasterSquirrel) container[i]).newLocation;
+                        container[i].position = ((HandOperatedMasterSquirrel) container[i]).newLocation;
                     }
                 }
             }

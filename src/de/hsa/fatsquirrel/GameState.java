@@ -1,4 +1,4 @@
-package SquirrelGame;
+package de.hsa.fatsquirrel;
 
 public class GameState {
 

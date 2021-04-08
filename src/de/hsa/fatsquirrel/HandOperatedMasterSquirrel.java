@@ -1,4 +1,4 @@
-package SquirrelGame;
+package de.hsa.fatsquirrel;
 
 
 import java.util.Scanner;
@@ -12,19 +12,24 @@ public class HandOperatedMasterSquirrel extends MasterSquirrel {
 
 
     @Override
+    public int getStartEnergy() { // TODO es muss geändert werden
+        return 0;
+    }
+
+    @Override
     public void nextStep() {
         System.out.println("Eingabe: ");
         Scanner scanner = new Scanner(System.in);
         char c = scanner.next(".").charAt(0);
         newLocation = switch (c) {
 // left
-            case 'a' -> getLocation().add(new XY(-1, 0));
+            case 'a' -> getPosition().add(new XY(-1, 0));
 //up
-            case 'w' -> getLocation().add(new XY(0, 1));
+            case 'w' -> getPosition().add(new XY(0, 1));
 // right
-            case 'd' -> getLocation().add(new XY(1, 0));
+            case 'd' -> getPosition().add(new XY(1, 0));
 // down
-            case 's' -> getLocation().add(new XY(0, -1));
+            case 's' -> getPosition().add(new XY(0, -1));
             default -> throw new IllegalStateException("Unexpected value: " + c);
         };
     }

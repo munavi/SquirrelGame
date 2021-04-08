@@ -1,4 +1,4 @@
-package SquirrelGame;
+package de.hsa.fatsquirrel;
 
 import java.util.Random;
 
@@ -27,7 +27,7 @@ public final class XY {
 
     public static XY randomDirection() {
         XY[] direction = {new XY(0, 1), new XY(1, 0), new XY(0, -1), new XY(-1, 0)};
-        //  new XY(0, -1), new XY(-1, -1), new XY(-1, 1), new XY(1, -1)
+        //  new XY(1, 1), new XY(-1, -1), new XY(-1, 1), new XY(1, -1)
         return direction[random.nextInt(direction.length)];
     }
 

@@ -1,14 +1,14 @@
-package SquirrelGame;
+package de.hsa.fatsquirrel;
 
 public abstract class Entity {
     private final int id;
     private int energy;
-    protected  XY location;
+    protected  XY position;
 
     public Entity(int id, int energy, XY loc){
         this.id = id;
         this.energy = energy;
-        this.location = loc;
+        this.position = loc;
     }
     public Entity setEntity(Entity set) {
         if (set == null){
@@ -29,9 +29,10 @@ public abstract class Entity {
     public int getEnergy() {
         return energy;
     }
+    public abstract int getStartEnergy();
 
-    public XY getLocation() {
-        return location;
+    public XY getPosition() {
+        return position;
     }
 
 
