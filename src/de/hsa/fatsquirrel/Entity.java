@@ -21,6 +21,10 @@ public abstract class Entity {
 
     }
 
+    public void setPosition(XY pos) {
+        position = pos;
+    }
+
 
     public int getId() {
         return id;
@@ -37,10 +41,7 @@ public abstract class Entity {
 
 
     public int updateEnergy(int delta){
-        if( delta >= 0){
         return energy += delta;
-        }
-        return energy -= delta;
     }
 
     public boolean equals(Object obj) { // ob zwei Entities diesselbe Entities implementieren

@@ -16,7 +16,13 @@ public class Board {
     public Board(BoardConfig config) {
         this.boardConfig = config;
         this.entities = new Entity[config.getSize().getX()][config.getSize().getY()];
-        
+        // hies als Aufruf init()
+
+
+
+        // Ich würde es in einer Methode reinpacken, so z.B init() und die dann im Kostruktor ausführen
+        // In der Methode init() werden dann 2 Methoden aufgerufen : createWalls() und andere platzierung entites ramdomly
+        // z. b putEntitiesRandomly oder sowas
         int id = 0;
         int x = boardConfig.getSize().getX();
         int y = boardConfig.getSize().getY();
@@ -67,6 +73,27 @@ public class Board {
     	return y;
     }
 
+    private void createWalls(int width, int height) {
+        // horizontal walls
+        for (int x = 0; x < width; x++) {
+            entityBasket.push(new Wall(0, new XY(x, 0)));
+            entityBasket.push(new Wall(0, new XY(x, height - 1)));
+        }
+
+        // vertical walls
+        for (int y = 1; y < height - 1; y++) {
+            entityBasket.push(new Wall(0, new XY(0, y)));
+            entityBasket.push(new Wall(0, new XY(width - 1, y)));
+        }
+    }
+
+    public EntitySet getEntitySet() {
+        return entityBasket;
+    }
+
+
+
+
     public XY getSize() {
         return boardConfig.getSize();
     }
@@ -90,7 +117,10 @@ public class Board {
 		System.out.println(content);
 		return content.toString();
 	}
-    
-    
+
+
+
+
+
 
 }
