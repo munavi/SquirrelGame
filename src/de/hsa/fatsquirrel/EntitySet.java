@@ -78,6 +78,12 @@ public class EntitySet {
         return content.toString();
     }
 
-
+    public Entity[] getContainer() {
+    	return container;
+    }
+    
+    public Entity getElement(int elementIndex) {
+    	return container[elementIndex];
+    }
 
 }
