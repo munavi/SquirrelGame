@@ -1,6 +1,6 @@
-package de.hsa.fatsquirrel;
+package de.hsa.fatsquirrel.core;
 
-public class Wall extends Entity{
+public class Wall extends Entity {
 
     public static final int START_ENERGY = -10;
 
@@ -17,7 +17,4 @@ public class Wall extends Entity{
         return START_ENERGY;
     }
 
-    @Override
-    public void nextStep() {
-    }
 }

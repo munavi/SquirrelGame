@@ -1,4 +1,4 @@
-package de.hsa.fatsquirrel;
+package de.hsa.fatsquirrel.core;
 
 public class GoodPlant extends Entity {
     public static final int START_ENERGY = 100;
@@ -16,7 +16,4 @@ public class GoodPlant extends Entity {
         return super.toString() + " of type core.GoodPlant " + " ID: "+ this.getId() + " Location: " + this.getPosition() + " Energy: " + this.getEnergy();
     }
 
-    @Override
-    public void nextStep() {
-    }
 }

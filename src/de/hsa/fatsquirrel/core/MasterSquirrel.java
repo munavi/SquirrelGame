@@ -1,4 +1,6 @@
-package de.hsa.fatsquirrel;
+package de.hsa.fatsquirrel.core;
+
+import de.hsa.fatsquirrel.console.MoveCommand;
 
 public abstract class MasterSquirrel extends PlayerEntity {
     private MoveCommand input;
@@ -14,7 +16,7 @@ public abstract class MasterSquirrel extends PlayerEntity {
     }
 
 
-    public boolean isMySquirrel(Entity e) {
+    public boolean isItMySquirrel(Entity e) {
         if (e instanceof MiniSquirrel) {
             return ((MiniSquirrel) e).getMaster() == this;
         }
@@ -25,10 +27,14 @@ public abstract class MasterSquirrel extends PlayerEntity {
         this.input = input;
     }
 
-    public void nextStep() {
-        getPosition().add(input.toXY());
+    public void nextStep(EntityContext context) {
+        if (getWaitTime() == 0) {
+            context.tryMove(this, XY.randomDirection());
+        }
+        else {
+            reduceWaitTime();
+        }
     }
-
 
 
     public String toString(){

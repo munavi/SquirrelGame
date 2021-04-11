@@ -1,4 +1,6 @@
-package de.hsa.fatsquirrel;
+package de.hsa.fatsquirrel.console;
+
+import de.hsa.fatsquirrel.core.XY;
 
 public enum MoveCommand {
     LEFT,

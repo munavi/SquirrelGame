@@ -1,9 +1,11 @@
-package de.hsa.fatsquirrel;
+package de.hsa.fatsquirrel.core;
+
+import de.hsa.fatsquirrel.console.UI;
 
 public abstract class Game {
 
-    protected UI ui;
-    protected State state;
+    public UI ui;
+    public State state;
 
     public Game(State state, UI ui) {
         this.state = state;
@@ -18,11 +20,11 @@ public abstract class Game {
         }
     }
 
-    abstract void render();
+    public abstract void render();
 
-    abstract void processInput();
+    protected abstract void processInput();
 
-    protected void update() {
+    public void update() {
         state.update();
     }
 

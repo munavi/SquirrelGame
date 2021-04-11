@@ -1,4 +1,4 @@
-package de.hsa.fatsquirrel;
+package de.hsa.fatsquirrel.core;
 
 public interface EntityContext {
     public XY getSize();

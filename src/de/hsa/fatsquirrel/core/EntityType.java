@@ -1,4 +1,4 @@
-package de.hsa.fatsquirrel;
+package de.hsa.fatsquirrel.core;
 
 public enum EntityType {
     GoodBeast,
@@ -18,7 +18,7 @@ public enum EntityType {
             return EntityType.GoodPlant;
         else if (entity instanceof BadPlant)
             return EntityType.BadPlant;
-        else if (entity instanceof Wall)
+        else if (entity instanceof de.hsa.fatsquirrel.core.Wall)
             return EntityType.Wall;
         else if (entity instanceof MasterSquirrel)
             return EntityType.MasterSquirrel;

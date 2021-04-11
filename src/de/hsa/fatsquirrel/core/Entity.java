@@ -1,21 +1,22 @@
-package de.hsa.fatsquirrel;
+package de.hsa.fatsquirrel.core;
 
 public abstract class Entity {
     private final int id;
     private int energy;
-    protected  XY position;
+    protected XY position;
 
-    protected Entity(int id, int energy, XY loc){
+    protected Entity(int id, int energy, XY loc) {
         this.id = id;
         this.energy = energy;
         this.position = loc;
     }
+
     public Entity setEntity(Entity set) {
-        if (set == null){
+        if (set == null) {
             System.out.flush();
             System.err.println(this + " has been removed from the set!");
             return null;
-        }else{
+        } else {
             return this;
         }
 
@@ -33,6 +34,7 @@ public abstract class Entity {
     public int getEnergy() {
         return energy;
     }
+
     public abstract int getStartEnergy();
 
     public XY getPosition() {
@@ -40,7 +42,7 @@ public abstract class Entity {
     }
 
 
-    public int updateEnergy(int delta){
+    public int updateEnergy(int delta) {
         return energy += delta;
     }
 
@@ -51,5 +53,17 @@ public abstract class Entity {
         return false;
     }
 
-    public abstract void nextStep(); // hier steht im Klassendiagramm EntityContext context. Wieso?
+    public boolean hasCollided(Entity entity) {
+        if (position.getX() == entity.getPosition().getX() &&
+                position.getY() == entity.getPosition().getY()) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean collidesWith(Entity entity) {
+        return true;
+    }
+
+
 }

@@ -1,8 +1,20 @@
 package de.hsa.fatsquirrel;
 
+import de.hsa.fatsquirrel.console.ConsoleUI;
+import de.hsa.fatsquirrel.console.GameImpl;
+import de.hsa.fatsquirrel.console.UI;
+import de.hsa.fatsquirrel.core.*;
+
 public class Launcher {
     public static void main( String [] args){
-        Game game = new GameImpl(new State(new Board(new BoardConfig(new XY(10,10),12))), new ConsoleUI());
+        BoardConfig config = new BoardConfig();
+        Board board = new Board(config);
+        HandOperatedMasterSquirrel player = new HandOperatedMasterSquirrel(0, new XY(5,5));
+        board.getEntitySet().push(player);
+        State state = new State(board);
+        UI ui = new ConsoleUI();
+        Game game = new GameImpl(state,ui,player);
         game.run();
+
     }
 }

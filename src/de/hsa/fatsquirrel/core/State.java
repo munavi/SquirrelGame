@@ -1,4 +1,6 @@
-package de.hsa.fatsquirrel;
+package de.hsa.fatsquirrel.core;
+
+import de.hsa.fatsquirrel.console.MoveCommand;
 
 public class State {
     private Board board;
