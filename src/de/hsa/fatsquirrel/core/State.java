@@ -16,19 +16,18 @@ public class State {
     }
 
     public void update(){
-        for (int x = 0; x < board.getSize().getX(); x++) {
-            for (int y = 0; y < board.getSize().getY(); y++) {
-                Entity iterField = board.getEntities()[x][y];
+        for (int x = 0; x < board.getEntitySet().getContainer().length ; x++) {
+                Entity iterField = board.getEntitySet().getElement(x);
                 if (iterField == null)
                     continue;
                 // If NOT NULL
-                if (iterField instanceof MasterSquirrel)
-
-                    ((MasterSquirrel)iterField).setInput(input);
-
+                if (iterField instanceof HandOperatedMasterSquirrel) {
+                    ((HandOperatedMasterSquirrel) iterField).setMoveCommand(input.toXY());
+                    ((HandOperatedMasterSquirrel) iterField).nextStep(flattenedBoard());
+                }
                 if (Character.class.isInstance(iterField))
                     continue; //((Character)iterField).nextStep();
-            }
+
         }
 
     }

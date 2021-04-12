@@ -29,7 +29,7 @@ public abstract class MasterSquirrel extends PlayerEntity {
 
     public void nextStep(EntityContext context) {
         if (getWaitTime() == 0) {
-            context.tryMove(this, XY.randomDirection());
+            context.tryMove(this, input.toXY());
         }
         else {
             reduceWaitTime();

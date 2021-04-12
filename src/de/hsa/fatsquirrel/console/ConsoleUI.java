@@ -3,16 +3,34 @@ package de.hsa.fatsquirrel.console;
 import de.hsa.fatsquirrel.core.BoardView;
 import de.hsa.fatsquirrel.core.EntityType;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class ConsoleUI implements UI {
+    private Scanner scanner = new Scanner(System.in);
     private String FIELD_SEPERATOR = "|";
-    private MoveCommand puffer;
+    public MoveCommand command;
 
     @Override
-    public MoveCommand getCommand() {
-        MoveCommand command = puffer;
-        puffer = null;
-        return command;
-
+    public MoveCommand getCommand() throws InputMismatchException {
+        System.out.println("Please insert Move Direction :");
+        char moveDirection = scanner.next().charAt(0);
+        if(moveDirection == 'a' || moveDirection == 's' || moveDirection == 'd' || moveDirection == 'w') {
+            switch (moveDirection) {
+                case 'a':
+                    return command = command.LEFT;
+                case 's':
+                    return command = command.DOWN;
+                case 'd':
+                    return command = command.RIGHT;
+                case 'w':
+                    return command = command.UP;
+            }
+        }else {
+            System.out.println("Invalid Input !");
+            getCommand();
+        }
+            return null;
     }
 
     @Override

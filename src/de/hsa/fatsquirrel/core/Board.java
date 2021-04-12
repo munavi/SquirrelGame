@@ -6,7 +6,7 @@ public class Board {
     private Entity[][] entities;
     private BoardConfig boardConfig;
     private EntitySet entityBasket;
-    private int id;
+    private int id = 1;
 
 //    public static void main(String[] args) {        //testen
 //        Board board = new Board(new BoardConfig());
