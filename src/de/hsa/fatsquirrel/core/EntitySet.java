@@ -97,9 +97,11 @@ public class EntitySet {
 
     public boolean isValidPosition(XY xy) {
         for (Entity e : container) {
-            if (xy.equals(e.getPosition())) {
-                return false;
-            }
+        	if(e != null) {
+	            if (xy.equals(e.getPosition())) {
+	                return false;
+	           	}
+	        }
         }
         return true;
     }

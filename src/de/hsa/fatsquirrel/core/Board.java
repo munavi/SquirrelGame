@@ -1,6 +1,6 @@
 package de.hsa.fatsquirrel.core;
 
-import java.util.Random;
+//import java.util.Random;
 
 public class Board {
     private Entity[][] entities;
@@ -8,10 +8,12 @@ public class Board {
     private EntitySet entityBasket;
     private int id = 1;
 
-//    public static void main(String[] args) {        //testen
-//        Board board = new Board(new BoardConfig());
-//        board.toString();
-//    }
+    public static void main(String[] args) {        //testen
+        Board board = new Board(new BoardConfig());
+        board.toString();
+        System.out.println();
+        board.showInConsole();
+    }
 
 
     public Board(BoardConfig config) {
@@ -19,74 +21,84 @@ public class Board {
         this.entities = new Entity[config.getSize().getX()][config.getSize().getY()];
         this.entityBasket = new EntitySet(boardConfig.getHeight() * boardConfig.getWidth());
         init();
-
-
-        // Ich würde es in einer Methode reinpacken, so z.B init() und die dann im Kostruktor ausführen
-        // In der Methode init() werden dann 2 Methoden aufgerufen : createWalls() und andere platzierung entites ramdomly
-        // z. b putEntitiesRandomly oder sowas
-//        int id = 0;
-//        int x = boardConfig.getSize().getX();
-//        int y = boardConfig.getSize().getY();
-//        entityBasket = new EntitySet((x * y));
-//        for (int i = 0; i <= x; i++) {
-//            entityBasket.push(new Wall(id, new XY(0, i)));    //populate first row with wall
-//            id++;
-//            entityBasket.push(new Wall(id, new XY(y, i)));    //populate last row with wall
-//            id++;
-//        }
-//        for (int i = 1; i <= (y - 1); i++) {
-//            entityBasket.push(new Wall(id, new XY(i, 0)));    //populate remaining left side with wall
-//            id++;
-//            entityBasket.push(new Wall(id, new XY(i, x)));    //populate remaining right side with wall
-//            id++;
-//        }
-//
-//        entityBasket.push(new GoodPlant(id, randomLocation()));
-//        id++;
-//        entityBasket.push(new BadPlant(id, randomLocation()));
-//        id++;
-//        entityBasket.push(new BadBeast(id, randomLocation()));
-//        id++;
-
+    
     }
 
     private void init() {
-        createWalls(boardConfig.getWidth(), boardConfig.getHeight());
-        //spawnEntitiesRandomly();
+    	
+    	createWalls(boardConfig.getWidth(), boardConfig.getHeight());
+    	generateAll("GoodPlant");
+    	generateAll("BadPlant");
+    	generateAll("BadBeast");
+    	generateSingleEntity("Hamster");	//test invalid input
+    
     }
 
-//    private void spawnEntitiesRandomly(EntitySet entityBasket, int width, int height) {
-//            XY randomPosition;
-//            do {
-//                randomPosition = new XY((int) (Math.random() * (width - 2)) + 1,
-//                        (int) (Math.random() * (height - 2)) + 1);
-//            } while (!entityBasket.isValidPosition(randomPosition));
-//
-//            switch (key) {
-//                case "GoodPlant":
-//                    entityBasket.push(new GoodPlant(0, randomPosition));
-//                    break;
-//                case "BadPlant":
-//                    entityBasket.push(new BadPlant(0, randomPosition));
-//                    break;
-//                case "Wall":
-//                    entityBasket.push(new Wall(0, randomPosition));
-//                    break;
-//                case "GoodBeast":
-//                    entityBasket.push(new GoodBeast(0, randomPosition));
-//                    break;
-//                case "BadBeast":
-//                    entityBasket.push(new BadBeast(0, randomPosition));
-//                    break;
-//                case "HandOperatedMasterSquirrel":
-//                    entityBasket.push(new HandOperatedMasterSquirrel(0, randomPosition));
-//                    break;
-//                default:
-//                    System.err.println(key);
-//            }
-//        }
+    private void generateAll(String entityType) {	//generate the max number of one of the entity types (max number defined in BoardConfig)
+    	int amount = 0;
+    	switch(entityType) {
+	    	case "GoodPlant":
+	    		amount = boardConfig.getNumberGoodPlants();
+	    		break;
+	    	case "BadPlant":
+	    		amount = boardConfig.getNumberBadPlants();
+	    		break;
+	    	case "GoodBeast":
+	    		amount = boardConfig.getNumberGoodBeasts();
+	    		break;
+	    	case "BadBeast":
+	    		amount = boardConfig.getNumberBadBeasts();
+	    		break;
+	    	default:
+	    		System.err.println(entityType);
+	    		return;
+	     }
+    	for(int i=0; i<amount; i++) {
+    		generateSingleEntity(entityType);
+    	}
+    	
+    }
 
+    private void generateSingleEntity(String entityType) {
+            XY randomPosition;
+            do {
+                randomPosition = new XY((int) (Math.random() * (boardConfig.getSize().getX() - 2)) + 1,
+                        (int) (Math.random() * (boardConfig.getSize().getY() - 2)) + 1);
+            }
+            while (!entityBasket.isValidPosition(randomPosition));
 
+            switch (entityType) {
+                case "GoodPlant":
+                    entityBasket.push(new GoodPlant(id, randomPosition));
+                    id++;
+                    break;
+                case "BadPlant":
+                    entityBasket.push(new BadPlant(id, randomPosition));
+                    id++;
+                    break;
+                case "Wall":
+                    entityBasket.push(new Wall(id, randomPosition));
+                    id++;
+                    break;
+                case "GoodBeast":
+                    entityBasket.push(new GoodBeast(id, randomPosition));
+                    id++;
+                    break;
+                case "BadBeast":
+                    entityBasket.push(new BadBeast(id, randomPosition));
+                    id++;
+                    break;
+                case "HandOperatedMasterSquirrel":
+                    entityBasket.push(new HandOperatedMasterSquirrel(id, randomPosition));
+                    id++;
+                    break;
+                default:
+                    System.err.println(entityType + " ist kein g�ltiges Wesen.");
+                    return;
+            }
+        }
+
+/*  //auch randomPosition aber anders
     public XY randomLocation() {
         XY xy = new XY(randomXPosition(), randomYPosition());
         for (int i = 0; i < entityBasket.getContainer().length; i++) {
@@ -110,6 +122,7 @@ public class Board {
         int y = rnd.nextInt(boardConfig.getSize().getY());
         return y;
     }
+*/
 
     private void createWalls(int width, int height) {
         // horizontal walls
@@ -158,5 +171,52 @@ public class Board {
         return content.toString();
     }
 
+    public void showInConsole() {
+		String[][] visual = new String[boardConfig.getSize().getX()][boardConfig.getSize().getY()];
+
+		for(int i=0; i < entityBasket.getContainer().length; i++) {
+			if(entityBasket.getElement(i)!=null) {
+			int x = entityBasket.getElement(i).getPosition().getX();
+			int y = entityBasket.getElement(i).getPosition().getY();
+			
+				if(entityBasket.getElement(i) instanceof Wall) {
+					visual[x][y] = "[]";
+				}
+				if(entityBasket.getElement(i) instanceof GoodBeast) {
+					visual[x][y] = "GB";
+				}
+				if(entityBasket.getElement(i) instanceof BadBeast) {
+					visual[x][y] = "BB";
+				}
+				if(entityBasket.getElement(i) instanceof GoodPlant) {
+					visual[x][y] = "GP";
+				}
+				if(entityBasket.getElement(i) instanceof BadPlant) {
+					visual[x][y] = "BP";
+				}
+				if(entityBasket.getElement(i) instanceof MasterSquirrel) {
+					visual[x][y] = "Ma";
+				}
+				if(entityBasket.getElement(i) instanceof MiniSquirrel) {
+					visual[x][y] = "Mi";
+				}
+			}
+		}
+		
+		for(int i=0; i<boardConfig.getSize().getX(); i++) {
+    		for(int j=0; j<boardConfig.getSize().getY(); j++) {
+    			if(visual[i][j]==null) {
+    				visual[i][j] = "  ";
+    			}
+    		}
+		}
+		
+		for(int i=0; i<boardConfig.getSize().getX(); i++) {
+			System.out.println();
+    		for(int j=0; j<boardConfig.getSize().getY(); j++) {
+    			System.out.print(visual[i][j]);
+    		}
+		}
+    }
 
 }
