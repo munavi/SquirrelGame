@@ -3,7 +3,7 @@ package de.hsa.fatsquirrel.core;
 import de.hsa.fatsquirrel.console.MoveCommand;
 
 public class State {
-    private Board board;
+    private final Board board;
     private MoveCommand input;
     private int highScore;
 
@@ -25,9 +25,14 @@ public class State {
                     ((HandOperatedMasterSquirrel) iterField).setMoveCommand(input.toXY());
                     ((HandOperatedMasterSquirrel) iterField).nextStep(flattenedBoard());
                 }
-                if (Character.class.isInstance(iterField))
-                    continue; //((Character)iterField).nextStep();
+                if (Character.class.isInstance(iterField) && !(iterField instanceof HandOperatedMasterSquirrel))
+                    ((Character)iterField).nextStep(flattenedBoard());
 
+        }
+        for(int i = 0; i < board.getEntitySet().getContainer().length; i++){
+            if(board.getEntitySet().getContainer()[i] instanceof HandOperatedMasterSquirrel){
+                System.out.println("Your Energy is: "+board.getEntitySet().getElement(i).getEnergy());
+            }
         }
 
     }

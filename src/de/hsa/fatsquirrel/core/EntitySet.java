@@ -26,7 +26,7 @@ public class EntitySet {
 
     public void delete(Entity e){
         for (int i = 0; i < number; i++) {
-            if (container[i].equals(e)){
+            if (container[i] != null && container[i].equals(e)){
                 container[i] = e.setEntity(null);
                 break;
             }

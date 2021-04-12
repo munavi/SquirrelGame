@@ -3,29 +3,20 @@ package de.hsa.fatsquirrel.core;
 //import java.util.Random;
 
 public class Board {
-    private Entity[][] entities;
     private BoardConfig boardConfig;
     private EntitySet entityBasket;
     private int id = 1;
 
-    public static void main(String[] args) {        //testen
-        Board board = new Board(new BoardConfig());
-        board.toString();
-        System.out.println();
-        board.showInConsole();
-    }
-
 
     public Board(BoardConfig config) {
         this.boardConfig = config;
-        this.entities = new Entity[config.getSize().getX()][config.getSize().getY()];
         this.entityBasket = new EntitySet(boardConfig.getHeight() * boardConfig.getWidth());
         init();
     
     }
 
     private void init() {
-    	
+
     	createWalls(boardConfig.getWidth(), boardConfig.getHeight());
     	generateAll("GoodPlant");
     	generateAll("BadPlant");
@@ -98,31 +89,6 @@ public class Board {
             }
         }
 
-/*  //auch randomPosition aber anders
-    public XY randomLocation() {
-        XY xy = new XY(randomXPosition(), randomYPosition());
-        for (int i = 0; i < entityBasket.getContainer().length; i++) {
-            if (entityBasket.getContainer()[i] != null) {
-                if (entityBasket.getContainer()[i].position.equals(xy)) {
-                    xy = randomLocation();
-                }
-            }
-        }
-        return xy;
-    }
-
-    public int randomXPosition() {
-        Random rnd = new Random();
-        int x = rnd.nextInt(boardConfig.getSize().getX());
-        return x;
-    }
-
-    public int randomYPosition() {
-        Random rnd = new Random();
-        int y = rnd.nextInt(boardConfig.getSize().getY());
-        return y;
-    }
-*/
 
     private void createWalls(int width, int height) {
         // horizontal walls
@@ -155,9 +121,8 @@ public class Board {
         return new FlattenedBoard(this);
     }
 
-    public Entity[][] getEntities() {
-        return entities;
-    }
+
+
 
     public String toString() {
         StringBuilder content = new StringBuilder();
@@ -217,6 +182,12 @@ public class Board {
     			System.out.print(visual[i][j]);
     		}
 		}
+		System.out.println();
     }
 
+    public int getId(){return id;}
+
+    public void setId(int id){
+        this.id = id;
+    }
 }

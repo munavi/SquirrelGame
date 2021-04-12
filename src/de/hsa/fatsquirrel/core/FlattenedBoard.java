@@ -100,6 +100,7 @@ public class FlattenedBoard implements EntityContext, BoardView {
         badBeast.updateWaitTime();
         if (badBeast.getRemainingBites() == 0) {
             killAndReplace(badBeast);
+            System.out.println("Bad Beast died !");
             return;
         }
 
@@ -144,25 +145,35 @@ public class FlattenedBoard implements EntityContext, BoardView {
         if (entity instanceof Wall) {
             masterSquirrel.updateEnergy(entity.getEnergy());
             masterSquirrel.paralyze();
+            System.out.println("You hit a wall!");
 
         } else if (entity instanceof GoodPlant) {
             masterSquirrel.updateEnergy(entity.getEnergy());
             killAndReplace(entity);
             move(masterSquirrel, moveDirection);
+            System.out.println("You ate a good plant!");
 
         } else if (entity instanceof BadPlant) {
             masterSquirrel.updateEnergy(entity.getEnergy());
             killAndReplace(entity);
             move(masterSquirrel, moveDirection);
+            System.out.println("You ate a bad plant!");
 
         } else if (entity instanceof GoodBeast) {
             masterSquirrel.updateEnergy(entity.getEnergy());
             killAndReplace(entity);
             move(masterSquirrel, moveDirection);
+            System.out.println("You ate a Good Beast");
 
         } else if (entity instanceof BadBeast) {
+            if ( ((BadBeast)entity).getRemainingBites() == 0) {
+                killAndReplace(entity);
+                System.out.println("Bad Beast died !");
+                return;
+            }
             masterSquirrel.updateEnergy(entity.getEnergy());
             ((BadBeast) entity).reduceBites();
+            System.out.println("You were bitten by a Bad Beast");
 
         } else if (entity instanceof MiniSquirrel) {
             if (masterSquirrel == ((MiniSquirrel) entity).getMaster()) {
@@ -184,10 +195,14 @@ public class FlattenedBoard implements EntityContext, BoardView {
         int radius = 6;
         ArrayList <PlayerEntity> nearestPlayers = new ArrayList<>();
         for (int x = pos.getX() - radius; x < pos.getX() + radius; x++) {
-            for (int y = pos.getY() - radius; y < pos.getY() + radius; y++) {
-                    if (cells[x][y] instanceof PlayerEntity) {
-                        nearestPlayers.add((PlayerEntity) cells[x][y]);
+            if (x > 0 && x < board.getSize().getX() ) {
+                for (int y = pos.getY() - radius; y < pos.getY() + radius; y++) {
+                    if (y > 0 && y < board.getSize().getY()) {
+                        if (cells[x][y] instanceof PlayerEntity) {
+                            nearestPlayers.add((PlayerEntity) cells[x][y]);
+                        }
                     }
+                }
             }
         }
         if (nearestPlayers.size() > 0) {
@@ -200,6 +215,7 @@ public class FlattenedBoard implements EntityContext, BoardView {
 
     @Override
     public void kill(Entity entity) {
+        board.getEntitySet().delete(entity);
         cells[entity.getPosition().getX()][entity.getPosition().getY()] = null;
     }
 
@@ -210,13 +226,21 @@ public class FlattenedBoard implements EntityContext, BoardView {
         Entity newEntity = null;
 
         if (entity instanceof GoodPlant) {
-            newEntity = new GoodPlant(0, position);
+            newEntity = new GoodPlant(board.getId(), position);
+            board.setId(board.getId() + 1);
+            board.getEntitySet().push(newEntity);
         } else if (entity instanceof BadPlant) {
-            newEntity = new BadPlant(0, position);
+            newEntity = new BadPlant(board.getId(), position);
+            board.setId(board.getId() + 1);
+            board.getEntitySet().push(newEntity);
         } else if (entity instanceof GoodBeast) {
-            newEntity = new GoodBeast(0, position);
+            newEntity = new GoodBeast(board.getId(), position);
+            board.setId(board.getId() + 1);
+            board.getEntitySet().push(newEntity);
         } else if (entity instanceof BadBeast) {
-            newEntity = new BadBeast(0, position);
+            newEntity = new BadBeast(board.getId(), position);
+            board.setId(board.getId() + 1);
+            board.getEntitySet().push(newEntity);
         }
         cells[position.getX()][position.getY()] = newEntity;
 
@@ -235,6 +259,13 @@ public class FlattenedBoard implements EntityContext, BoardView {
                     (int) (Math.random() * (cells[0].length - 2)) + 1);
         } while (cells[randomPosition.getX()][randomPosition.getY()] != null);
         return randomPosition;
+    }
+
+    private boolean testValidPosition(Entity entity){
+        if(entity.getPosition().getY() < 0 || entity.getPosition().getY() > board.getSize().getY() || entity.getPosition().getX() < 0 || entity.getPosition().getX() > board.getSize().getX()){
+                return false;
+        }
+        return true;
     }
 
     public void move(Entity entity, XY moveCommand) {
@@ -265,6 +296,9 @@ public class FlattenedBoard implements EntityContext, BoardView {
     public String toString(){
         return board.toString();
     }
+
+    @Override
+    public void visualize() { board.showInConsole(); }
 
 
 

@@ -7,45 +7,33 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ConsoleUI implements UI {
-    private Scanner scanner = new Scanner(System.in);
-    private String FIELD_SEPERATOR = "|";
+    private final Scanner scanner = new Scanner(System.in);
     public MoveCommand command;
 
     @Override
-    public MoveCommand getCommand() throws InputMismatchException {
+    public MoveCommand getCommand() {
         System.out.println("Please insert Move Direction :");
         char moveDirection = scanner.next().charAt(0);
         if(moveDirection == 'a' || moveDirection == 's' || moveDirection == 'd' || moveDirection == 'w') {
             switch (moveDirection) {
                 case 'a':
-                    return command = command.LEFT;
+                    return command = MoveCommand.LEFT;
                 case 's':
-                    return command = command.DOWN;
+                    return command = MoveCommand.DOWN;
                 case 'd':
-                    return command = command.RIGHT;
+                    return command = MoveCommand.RIGHT;
                 case 'w':
-                    return command = command.UP;
+                    return command = MoveCommand.UP;
             }
-        }else {
-            System.out.println("Invalid Input !");
-            getCommand();
         }
-            return null;
+
+        System.out.println("Invalid Input !");
+        return getCommand();
     }
 
     @Override
     public void render(BoardView view) {
-//        String result = "";
-//        for (int y = 0; y < view.getSize().getY(); y++) {
-//            for (int x = 0; x < view.getSize().getX(); x++) {
-//                EntityType iterField = view.getEntityType(x, y);
-//                if (iterField == null)
-//                    result += "__";
-//                else
-//                    result += toString(iterField) + FIELD_SEPERATOR;
-//            }
-//        }
-        view.toString();
+        view.visualize();
 
 
     }

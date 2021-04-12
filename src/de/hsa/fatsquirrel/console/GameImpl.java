@@ -21,6 +21,5 @@ public class GameImpl extends Game {
     @Override
     public void processInput() {
         state.setInput(ui.getCommand());
-
     }
 }
