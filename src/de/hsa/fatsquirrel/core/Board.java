@@ -2,7 +2,12 @@ package de.hsa.fatsquirrel.core;
 
 //import java.util.Random;
 
+import de.hsa.fatsquirrel.console.GameCommandType;
+import de.hsa.fatsquirrel.console.MoveCommand;
+
 public class Board {
+    private GameCommandType input;
+    //private MoveCommand input;
     private BoardConfig boardConfig;
     private EntitySet entityBasket;
     private int id = 1;
@@ -21,9 +26,11 @@ public class Board {
     	generateAll("GoodPlant");
     	generateAll("BadPlant");
     	generateAll("BadBeast");
-    	generateSingleEntity("Hamster");	//test invalid input
+    	//generateSingleEntity("Hamster");	//test invalid input
     
     }
+
+
 
     private void generateAll(String entityType) {	//generate the max number of one of the entity types (max number defined in BoardConfig)
     	int amount = 0;
@@ -58,35 +65,33 @@ public class Board {
             }
             while (!entityBasket.isValidPosition(randomPosition));
 
-            switch (entityType) {
-                case "GoodPlant":
-                    entityBasket.push(new GoodPlant(id, randomPosition));
-                    id++;
-                    break;
-                case "BadPlant":
-                    entityBasket.push(new BadPlant(id, randomPosition));
-                    id++;
-                    break;
-                case "Wall":
-                    entityBasket.push(new Wall(id, randomPosition));
-                    id++;
-                    break;
-                case "GoodBeast":
-                    entityBasket.push(new GoodBeast(id, randomPosition));
-                    id++;
-                    break;
-                case "BadBeast":
-                    entityBasket.push(new BadBeast(id, randomPosition));
-                    id++;
-                    break;
-                case "HandOperatedMasterSquirrel":
-                    entityBasket.push(new HandOperatedMasterSquirrel(id, randomPosition));
-                    id++;
-                    break;
-                default:
-                    System.err.println(entityType + " ist kein gültiges Wesen.");
-                    return;
+        switch (entityType) {
+            case "GoodPlant" -> {
+                entityBasket.push(new GoodPlant(id, randomPosition));
+                id++;
             }
+            case "BadPlant" -> {
+                entityBasket.push(new BadPlant(id, randomPosition));
+                id++;
+            }
+            case "Wall" -> {
+                entityBasket.push(new Wall(id, randomPosition));
+                id++;
+            }
+            case "GoodBeast" -> {
+                entityBasket.push(new GoodBeast(id, randomPosition));
+                id++;
+            }
+            case "BadBeast" -> {
+                entityBasket.push(new BadBeast(id, randomPosition));
+                id++;
+            }
+            case "HandOperatedMasterSquirrel" -> {
+                entityBasket.push(new HandOperatedMasterSquirrel(id, randomPosition));
+                id++;
+            }
+            default -> System.err.println(entityType + " ist kein gültiges Wesen.");
+        }
         }
 
 
@@ -190,4 +195,6 @@ public class Board {
     public void setId(int id){
         this.id = id;
     }
+
+
 }

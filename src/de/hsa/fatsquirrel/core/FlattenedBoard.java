@@ -274,7 +274,9 @@ public class FlattenedBoard implements EntityContext, BoardView {
         cells[entity.getPosition().getX()][entity.getPosition().getY()] = entity;
     }
 
-    public void spawnMiniSquirrel(MasterSquirrel master, int energy) {
+    public void spawnMiniSquirrel(MasterSquirrel master, int energy) throws NotEnoughEnergyException {
+
+        if (master.getEnergy() - energy <= 0) throw new NotEnoughEnergyException("Squirrel doesn't have enough energy.");
 
         // find a valid position around the mastersquirrel
         XY position = null;

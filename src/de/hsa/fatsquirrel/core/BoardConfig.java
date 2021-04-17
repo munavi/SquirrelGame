@@ -15,7 +15,7 @@ public class BoardConfig {
         this.wallCount= 2 * (this.height + this.width) - 4;
         this.numberWalls = wallCount;
         numberBadPlants = 5;
-        numberBadBeasts = 1;
+        numberBadBeasts = 5;
         numberGoodPlants = 5;
         numberGoodBeasts = 5;
     }

@@ -18,4 +18,6 @@ public interface EntityContext {
     public void killAndReplace(Entity entity);
 
     public EntityType getEntityType(XY xy);
+
+    void spawnMiniSquirrel(MasterSquirrel patron, int energy) throws NotEnoughEnergyException;
 }

@@ -4,8 +4,8 @@ import de.hsa.fatsquirrel.console.UI;
 
 public abstract class Game {
 
-    public UI ui;
-    public State state;
+    protected UI ui;
+    protected State state;
 
     public Game(State state, UI ui) {
         this.state = state;

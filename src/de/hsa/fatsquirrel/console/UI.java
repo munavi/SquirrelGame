@@ -1,10 +1,12 @@
 package de.hsa.fatsquirrel.console;
 
 import de.hsa.fatsquirrel.core.BoardView;
+import de.hsa.fatsquirrel.util.ui.console.Command;
 
 public interface UI {
 
-    public MoveCommand getCommand();
-    public void render(BoardView view);
+    void render(BoardView view);
+    Command getCommand();
+    void message(String message);
 
 }
