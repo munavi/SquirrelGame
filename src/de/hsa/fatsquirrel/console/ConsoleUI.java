@@ -3,7 +3,6 @@ package de.hsa.fatsquirrel.console;
 import de.hsa.fatsquirrel.core.*;
 import de.hsa.fatsquirrel.util.ui.console.Command;
 import de.hsa.fatsquirrel.util.ui.console.CommandScanner;
-import de.hsa.fatsquirrel.util.ui.console.ScanException;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -29,25 +28,25 @@ public class ConsoleUI implements UI {
                 System.out.print("|");
                 EntityType entity = view.getEntityType(x, y);
 
-                if (entity == EntityType.Wall) {
+                if (entity == EntityType.WALL) {
                     System.out.print("WA");
                 }
-                else if (entity == EntityType.GoodPlant) {
+                else if (entity == EntityType.GOOD_PLANT) {
                     System.out.print("GP");
                 }
-                else if (entity== EntityType.BadPlant) {
+                else if (entity== EntityType.BAD_PLANT) {
                     System.out.print("BP");
                 }
-                else if (entity == EntityType.GoodBeast) {
+                else if (entity == EntityType.GOOD_BEAST) {
                     System.out.print("GB");
                 }
-                else if (entity == EntityType.BadBeast) {
+                else if (entity == EntityType.BAD_BEAST) {
                     System.out.print("BB");
                 }
-                else if (entity == EntityType.MasterSquirrel) {
+                else if (entity == EntityType.MASTER_SQUIRREL) {
                     System.out.print("Ma");
                 }
-                else if (entity == EntityType.MiniSquirrel) {
+                else if (entity == EntityType.MINI_SQUIRREL) {
                     System.out.print("Mi");
                 }
                 else {
@@ -103,9 +102,9 @@ public class ConsoleUI implements UI {
 //
 //    private String toString(EntityType entity) {
 //        switch (entity) {
-//            case GoodBeast:
+//            case GOOD_BEAST:
 //                return "GB";
-//            case BadBeast:
+//            case BAD_BEAST:
 //                return "BB";
 //            case GoodPlant:
 //                return "GP";

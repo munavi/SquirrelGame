@@ -33,16 +33,10 @@ public class GameImpl extends Game {
         try {
 
             Class clazz = Class.forName("core.GameImpl");
-            Method method = clazz.getDeclaredMethod(commandType.getName(), commandType.getParamTypes());
+            Method method = clazz.getDeclaredMethod(commandType.getName(), commandType.getParamTypes()); // returns an array with methods
             method.invoke(this, params);
 
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
 

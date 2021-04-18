@@ -25,7 +25,7 @@ public class Board {
     	createWalls(boardConfig.getWidth(), boardConfig.getHeight());
     	generateAll("GoodPlant");
     	generateAll("BadPlant");
-    	generateAll("BadBeast");
+    	generateAll("BAD_BEAST");
     	//generateSingleEntity("Hamster");	//test invalid input
     
     }
@@ -41,10 +41,10 @@ public class Board {
 	    	case "BadPlant":
 	    		amount = boardConfig.getNumberBadPlants();
 	    		break;
-	    	case "GoodBeast":
+	    	case "GOOD_BEAST":
 	    		amount = boardConfig.getNumberGoodBeasts();
 	    		break;
-	    	case "BadBeast":
+	    	case "BAD_BEAST":
 	    		amount = boardConfig.getNumberBadBeasts();
 	    		break;
 	    	default:
@@ -78,11 +78,11 @@ public class Board {
                 entityBasket.push(new Wall(id, randomPosition));
                 id++;
             }
-            case "GoodBeast" -> {
+            case "GOOD_BEAST" -> {
                 entityBasket.push(new GoodBeast(id, randomPosition));
                 id++;
             }
-            case "BadBeast" -> {
+            case "BAD_BEAST" -> {
                 entityBasket.push(new BadBeast(id, randomPosition));
                 id++;
             }

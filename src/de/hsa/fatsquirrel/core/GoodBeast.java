@@ -13,7 +13,7 @@ public class GoodBeast extends Character {
     }
 
     public String toString() {
-        return super.toString() + " of type GoodBeast " + " ID: "+ this.getId() + " Location: " + this.getPosition() + " Energy: " + this.getEnergy();
+        return super.toString() + " of type GOOD_BEAST " + " ID: "+ this.getId() + " Location: " + this.getPosition() + " Energy: " + this.getEnergy();
     }
 
     public void nextStep(EntityContext context) {

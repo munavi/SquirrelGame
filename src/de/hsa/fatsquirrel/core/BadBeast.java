@@ -11,7 +11,7 @@ public class BadBeast extends Character {
     }
 
     public String toString() {
-        return super.toString() + " of type BadBeast " + " ID: " + this.getId() + " Location: " + this.getPosition() + " Energy: " + this.getEnergy();
+        return super.toString() + " of type BAD_BEAST " + " ID: " + this.getId() + " Location: " + this.getPosition() + " Energy: " + this.getEnergy();
     }
 
     public int getStartEnergy() {

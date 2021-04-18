@@ -1,8 +1,5 @@
 package de.hsa.fatsquirrel.core;
 
-import de.hsa.fatsquirrel.console.GameCommandType;
-import de.hsa.fatsquirrel.console.MoveCommand;
-
 public class State {
     private final Board board;
     private XY moveCommand;
@@ -23,16 +20,16 @@ public class State {
             Entity iterField = board.getEntitySet().getElement(x);
             EntityType type = EntityType.fromEntity(iterField);
             switch (type) {
-                case EmptyField:
+                case EMPTY_FIELD:
                     continue;
-                case HandOperatedMasterSquirrel:
+                case HAND_OPERATED_MASTER_SQUIRREL:
                     ((HandOperatedMasterSquirrel) iterField).setMoveCommand(moveCommand);
                     setMoveCommand(null);
                     ((Character) iterField).nextStep(flattenedBoard());
                     break;
-                case BadBeast:
-                case GoodBeast:
-                case MiniSquirrel:
+                case BAD_BEAST:
+                case GOOD_BEAST:
+                case MINI_SQUIRREL:
 
 
                     for (int i = 0; i < board.getEntitySet().getContainer().length; i++) {
