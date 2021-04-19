@@ -37,10 +37,10 @@ public class CommandScanner {
             if (type == null) continue;
 
             if (type == int.class) {
-                params[i] = Integer.parseInt(input[i+1]);
+                params[i] = Integer.parseInt(input[i + 1]);
             }
             else if (type == float.class) {
-                params[i] = Float.parseFloat(input[i+1]);
+                params[i] = Float.parseFloat(input[i + 1]);
             }
             else {
                 params[i] = input[i + 1];

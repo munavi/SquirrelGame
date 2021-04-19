@@ -17,7 +17,9 @@ public class Launcher {
         State state = new State(board);
         UI ui = new ConsoleUI();
         Game game = new GameImpl(state,ui,player);
-        game.run();
+//        game.run();
+        ui.inputLoop();
+
 
 
     }

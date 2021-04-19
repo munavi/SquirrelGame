@@ -31,8 +31,10 @@ public class GameImpl extends Game {
         GameCommandType commandType = (GameCommandType) command.getCommandType();
 
         try {
-
-            Class clazz = Class.forName("core.GameImpl");
+            // laden und die Beschreibung unserer Klasse als Referenz clazz vom Typ Class erhalten
+            Class clazz = Class.forName("core.GameImpl"); // lokalisiert, lädt und bindet clazz- Instanz zum GameImpl
+            // Holen die gewünschte Methode über method und geben den Zugriff auf sie frei.
+            // Zum Aufruf des Methodenobjekts method verwenden - invoke
             Method method = clazz.getDeclaredMethod(commandType.getName(), commandType.getParamTypes()); // returns an array with methods
             method.invoke(this, params);
 

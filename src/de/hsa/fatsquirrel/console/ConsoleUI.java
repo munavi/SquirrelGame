@@ -3,6 +3,7 @@ package de.hsa.fatsquirrel.console;
 import de.hsa.fatsquirrel.core.*;
 import de.hsa.fatsquirrel.util.ui.console.Command;
 import de.hsa.fatsquirrel.util.ui.console.CommandScanner;
+import de.hsa.fatsquirrel.util.ui.console.ScanException;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -30,26 +31,19 @@ public class ConsoleUI implements UI {
 
                 if (entity == EntityType.WALL) {
                     System.out.print("WA");
-                }
-                else if (entity == EntityType.GOOD_PLANT) {
+                } else if (entity == EntityType.GOOD_PLANT) {
                     System.out.print("GP");
-                }
-                else if (entity== EntityType.BAD_PLANT) {
+                } else if (entity == EntityType.BAD_PLANT) {
                     System.out.print("BP");
-                }
-                else if (entity == EntityType.GOOD_BEAST) {
+                } else if (entity == EntityType.GOOD_BEAST) {
                     System.out.print("GB");
-                }
-                else if (entity == EntityType.BAD_BEAST) {
+                } else if (entity == EntityType.BAD_BEAST) {
                     System.out.print("BB");
-                }
-                else if (entity == EntityType.MASTER_SQUIRREL) {
+                } else if (entity == EntityType.MASTER_SQUIRREL) {
                     System.out.print("Ma");
-                }
-                else if (entity == EntityType.MINI_SQUIRREL) {
+                } else if (entity == EntityType.MINI_SQUIRREL) {
                     System.out.print("Mi");
-                }
-                else {
+                } else {
                     System.out.print("  ");
                 }
             }
@@ -66,6 +60,18 @@ public class ConsoleUI implements UI {
         return command;
 
     }
+
+    public void inputLoop() {
+        while (true) {
+            try {
+                puffer = commandScanner.next();
+            } catch (ScanException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+}
+
 
 
 
@@ -124,6 +130,6 @@ public class ConsoleUI implements UI {
 
 
 
-}
+
 
 

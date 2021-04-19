@@ -5,9 +5,9 @@ import de.hsa.fatsquirrel.util.ui.console.CommandTypeInfo;
 public enum MyFavouriteCommandType implements CommandTypeInfo {
     HELP("help", "  * list all commands"),
     EXIT("exit", "  * exit program"),
-    ADDI("addi", "<param1>  <param2>   * simple integer add ", int.class, int.class),
-    ADDF("addf", "<param1>  <param2>   * simple float add ", float.class, float.class),
-    ECHO("echo", "<param1>  <param2>   * echos param1 string param2 times ", String.class, int.class);
+    ADDI("addi", " <param1>  <param2>   * simple integer add ", int.class, int.class),
+    ADDF("addf", " <param1>  <param2>   * simple float add ", float.class, float.class),
+    ECHO("echo", " <param1>  <param2>   * echos param1 string param2 times ", String.class, int.class);
 
     private final String commandName;
     private final String helpText;
