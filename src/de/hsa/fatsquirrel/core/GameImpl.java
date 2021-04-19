@@ -42,7 +42,37 @@ public class GameImpl extends Game {
             e.printStackTrace();
         }
 
-        //state.setInput(ui.getCommand());
+        // Ich glaube doch, dass Methoden unter eine effizientere Lösung ist
+//        switch(commandType){
+//            case EXIT:
+//                System.exit(0);
+//            case HELP:
+//                help();
+//            case ALL:
+//                // TO DO
+//            case LEFT:
+//                player.setMoveCommand(new XY(-1, 0));
+//                break;
+//            case RIGHT:
+//                player.setMoveCommand(new XY(1,0));
+//                break;
+//            case UP:
+//                player.setMoveCommand(new XY(0,1));
+//                break;
+//            case DOWN:
+//                player.setMoveCommand(new XY(0,-1));
+//                break;
+//            case SPAWN_MINI:
+//                try{
+//                    state.flattenedBoard().spawnMiniSquirrel(player, (int) params[0]);
+//                } catch( NotEnoughEnergyException e){
+//                    System.out.println(e.getMessage());
+//                }
+//                break;
+//            case MASTER_ENERGY:
+//                System.out.println(player.getEnergy());
+//                break;
+//        }
     }
 
     private void exit() {
