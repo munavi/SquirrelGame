@@ -6,7 +6,6 @@ import de.hsa.fatsquirrel.util.ui.console.*;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Parameter;
 
 
 public class GameImpl extends Game {
@@ -34,7 +33,6 @@ public class GameImpl extends Game {
         try {
             // laden und die Beschreibung unserer Klasse als Referenz clazz vom Typ Class erhalten
             Class clazz = Class.forName("de.hsa.fatsquirrel.core.GameImpl"); // lokalisiert, lädt und bindet clazz- Instanz zum GameImpl
-            // Holen die gewünschte Methode über method und geben den Zugriff auf sie frei.
             // Zum Aufruf des Methodenobjekts method verwenden - invoke
             Method method = clazz.getDeclaredMethod(commandType.getName(), commandType.getParamTypes()); // returns an array with methods
             method.invoke(this, params);
@@ -84,8 +82,8 @@ public class GameImpl extends Game {
     private void help() {
         CommandTypeInfo[] commandTypes = GameCommandType.values();
         String message = "";
-        for (int i = 0; i < commandTypes.length; i++) {
-            message += commandTypes[i].getName() + commandTypes[i].getHelpText() + '\n';
+        for (CommandTypeInfo commandType : commandTypes) {
+            message += commandType.getName() + commandType.getHelpText() + '\n';
         }
         ui.message(message);
     }
@@ -96,29 +94,25 @@ public class GameImpl extends Game {
 
     private void left() {
         player.setMoveCommand(new XY(-1, 0));
-//        player.nextStep(state.flattenedBoard());
     }
 
     private void right() {
         player.setMoveCommand(new XY(1, 0));
-//        player.nextStep(state.flattenedBoard());
     }
 
     private void up() {
         player.setMoveCommand(new XY(0, -1));
-//        player.nextStep(state.flattenedBoard());
+
 
     }
 
     private void down() {
         player.setMoveCommand(new XY(0, 1));
-//        player.nextStep(state.flattenedBoard());
     }
 
     private void master_energy() {
         player.setMoveCommand(new XY(0,0));
         ui.message("Your current energy: " + player.getEnergy());
-//        player.nextStep(state.flattenedBoard());
     }
 
     private void spawn_mini(int energy) {

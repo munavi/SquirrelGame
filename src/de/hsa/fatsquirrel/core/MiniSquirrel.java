@@ -31,4 +31,8 @@ public class MiniSquirrel extends PlayerEntity{
         }
 
     }
+
+    public String toString(){
+        return super.toString() + " of type " + this.getClass()+ " ID: "+ this.getId() + " Location: " + this.getPosition() + " Energy: " + this.getEnergy();
+    }
 }

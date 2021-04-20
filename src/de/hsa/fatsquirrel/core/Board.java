@@ -3,11 +3,9 @@ package de.hsa.fatsquirrel.core;
 //import java.util.Random;
 
 import de.hsa.fatsquirrel.console.GameCommandType;
-import de.hsa.fatsquirrel.console.MoveCommand;
 
 public class Board {
     private GameCommandType input;
-    //private MoveCommand input;
     private BoardConfig boardConfig;
     private EntitySet entityBasket;
     private int id = 1;
