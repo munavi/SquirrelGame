@@ -290,9 +290,10 @@ public class FlattenedBoard implements EntityContext, BoardView {
         }
 
         master.updateEnergy(energy * -1);
-        MiniSquirrel newEntity = new MiniSquirrel(0, energy, position, master);
+        MiniSquirrel newEntity = new MiniSquirrel((board.getId() + 1), energy, position, master);
 
         cells[position.getX()][position.getY()] = newEntity;
+        board.getEntitySet().push(newEntity);
     }
 
     public String toString(){

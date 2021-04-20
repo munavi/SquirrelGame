@@ -1,10 +1,12 @@
 package de.hsa.fatsquirrel.core;
 
 
+import de.hsa.fatsquirrel.console.GameCommandType;
 import de.hsa.fatsquirrel.console.MoveCommand;
 
 public class HandOperatedMasterSquirrel extends MasterSquirrel {
     private XY moveCommand = new XY(0, 0);
+    private GameCommandType input;
 
     public HandOperatedMasterSquirrel(int id, XY loc) {
         super(id, loc);

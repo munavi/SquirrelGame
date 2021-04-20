@@ -22,7 +22,7 @@ public class ConsoleUI implements UI {
     }
 
 
-    @Override
+
     public void render(BoardView view) {
         for (int y = 0; y < view.getSize().getY(); y++) {
             for (int x = 0; x < view.getSize().getX(); x++) {
@@ -51,25 +51,34 @@ public class ConsoleUI implements UI {
         }
 
 
+
     }
+
+//    public void render(BoardView view) {
+//        view.visualize();
+//
+//    }
 
     @Override
     public Command getCommand() {
-        Command command = puffer;
-        puffer = null;
-        return command;
-
-    }
-
-    public void inputLoop() {
         while (true) {
             try {
-                puffer = commandScanner.next();
+               return puffer = commandScanner.next();
             } catch (ScanException e) {
                 System.out.println(e.getMessage());
             }
         }
     }
+
+//    public void inputLoop() {
+//        while (true) {
+//            try {
+//                puffer = commandScanner.next();
+//            } catch (ScanException e) {
+//                System.out.println(e.getMessage());
+//            }
+//        }
+//    }
 }
 
 

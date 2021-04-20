@@ -6,6 +6,7 @@ import de.hsa.fatsquirrel.util.ui.console.*;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Parameter;
 
 
 public class GameImpl extends Game {
@@ -32,7 +33,7 @@ public class GameImpl extends Game {
 
         try {
             // laden und die Beschreibung unserer Klasse als Referenz clazz vom Typ Class erhalten
-            Class clazz = Class.forName("core.GameImpl"); // lokalisiert, lädt und bindet clazz- Instanz zum GameImpl
+            Class clazz = Class.forName("de.hsa.fatsquirrel.core.GameImpl"); // lokalisiert, lädt und bindet clazz- Instanz zum GameImpl
             // Holen die gewünschte Methode über method und geben den Zugriff auf sie frei.
             // Zum Aufruf des Methodenobjekts method verwenden - invoke
             Method method = clazz.getDeclaredMethod(commandType.getName(), commandType.getParamTypes()); // returns an array with methods
@@ -42,25 +43,24 @@ public class GameImpl extends Game {
             e.printStackTrace();
         }
 
-        // Ich glaube doch, dass Methoden unter eine effizientere Lösung ist
 //        switch(commandType){
 //            case EXIT:
-//                System.exit(0);
+//                exit();
 //            case HELP:
 //                help();
 //            case ALL:
 //                // TO DO
 //            case LEFT:
-//                player.setMoveCommand(new XY(-1, 0));
+//                left();
 //                break;
 //            case RIGHT:
-//                player.setMoveCommand(new XY(1,0));
+//                right();
 //                break;
 //            case UP:
-//                player.setMoveCommand(new XY(0,1));
+//                up();
 //                break;
 //            case DOWN:
-//                player.setMoveCommand(new XY(0,-1));
+//                down();
 //                break;
 //            case SPAWN_MINI:
 //                try{
@@ -72,6 +72,8 @@ public class GameImpl extends Game {
 //            case MASTER_ENERGY:
 //                System.out.println(player.getEnergy());
 //                break;
+//
+//
 //        }
     }
 
@@ -94,26 +96,34 @@ public class GameImpl extends Game {
 
     private void left() {
         player.setMoveCommand(new XY(-1, 0));
+//        player.nextStep(state.flattenedBoard());
     }
 
     private void right() {
         player.setMoveCommand(new XY(1, 0));
+//        player.nextStep(state.flattenedBoard());
     }
 
     private void up() {
         player.setMoveCommand(new XY(0, -1));
+//        player.nextStep(state.flattenedBoard());
+
     }
 
     private void down() {
         player.setMoveCommand(new XY(0, 1));
+//        player.nextStep(state.flattenedBoard());
     }
 
     private void master_energy() {
+        player.setMoveCommand(new XY(0,0));
         ui.message("Your current energy: " + player.getEnergy());
+//        player.nextStep(state.flattenedBoard());
     }
 
     private void spawn_mini(int energy) {
         try {
+            player.setMoveCommand(new XY(0,0));
             state.flattenedBoard().spawnMiniSquirrel(player, energy);
         } catch (NotEnoughEnergyException e) {
             ui.message(e.getMessage());

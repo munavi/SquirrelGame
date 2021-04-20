@@ -21,7 +21,7 @@ public enum GameCommandType implements CommandTypeInfo {
     GameCommandType(String commandName, String helpText, Class param1) {
         this.commandName = commandName;
         this.helpText = helpText;
-        this.params = new Class[0];
+        this.params = new Class[]{param1};
     }
 
     GameCommandType(String commandName, String helpText) {

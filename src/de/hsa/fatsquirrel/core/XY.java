@@ -22,10 +22,10 @@ public final class XY {
     }
 
     public String toString() {
-        return "XY " + " x= " + x + " y= " + y;        //Nicolas: x und y vertauscht. Erkl�rung: Bsp.: Array[0][5]; Arrayposition in 2d im Kopf vorstellen: die nullte Zeile, und f�nftes Element. toString soll also sagen: x=5 y=0 (wenn wir den Origin des Koordinatensystems links oben haben)
-    }                                                //Sollte man die Vertauschung vielleicht generell machen(also oben im Konstruktor)?
+        return "XY " + " x= " + x + " y= " + y;
+    }
 
-    //oder bin ich doof? (es ist mir aufgefallen als ich den Board Konstruktor gemacht habe und die Entity positionen auf der Konsole gelesen habe)
+
     public static XY randomDirection() {
         XY[] direction = {new XY(0, 1), new XY(1, 0), new XY(0, -1), new XY(-1, 0)};
         //  new XY(1, 1), new XY(-1, -1), new XY(-1, 1), new XY(1, -1)

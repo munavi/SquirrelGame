@@ -1,4 +1,5 @@
 package de.hsa.fatsquirrel.core;
+import java.util.HashMap;
 
 public class BoardConfig {
     private XY size;
