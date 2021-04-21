@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.PrintStream;
 import java.util.Scanner;
 
+
 public class CommandScanner {
     private final CommandTypeInfo[] commandTypes;
     private final BufferedReader inputReader;
@@ -37,7 +38,22 @@ public class CommandScanner {
             if (type == null) continue;
 
             if (type == int.class) {
-                params[i] = Integer.parseInt(input[i + 1]);
+            	if(input[0].equals("spawn_mini")) {
+	            	if(input.length == 1) {
+	            		System.out.println("no parameter passed, mini gets the default amount of energy (100) if Squirrel has enough energy");
+	            		params[i] = 100;
+	            	}
+	            	else if(Integer.parseInt(input[i + 1]) >= 0 && 99 >= Integer.parseInt(input[i + 1])) {
+	            		System.out.println("passed energy should be at least 100, mini gets the default amount of energy (100) if Squirrel has enough energy");
+	            		params[i] = 100;
+	            	}
+	            	else {
+	                params[i] = Integer.parseInt(input[i + 1]);
+	            	}
+            	}
+            	else {
+            		params[i] = Integer.parseInt(input[i + 1]);
+            	}
             }
             else if (type == float.class) {
                 params[i] = Float.parseFloat(input[i + 1]);

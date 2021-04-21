@@ -15,10 +15,10 @@ public class BoardConfig {
         this.height = size.getY();
         this.wallCount= 2 * (this.height + this.width) - 4;
         this.numberWalls = wallCount;
-        numberBadPlants = 5;
-        numberBadBeasts = 5;
-        numberGoodPlants = 5;
-        numberGoodBeasts = 5;
+        numberBadPlants = 2;
+        numberBadBeasts = 2;
+        numberGoodPlants = 2;
+        numberGoodBeasts = 2;
     }
 
     public XY getSize(){

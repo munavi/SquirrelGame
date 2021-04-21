@@ -10,6 +10,8 @@ import java.lang.reflect.InvocationTargetException;
 
 public class GameImpl extends Game {
     HandOperatedMasterSquirrel player;
+    
+
 
     public GameImpl(State state, UI ui, HandOperatedMasterSquirrel player) {
         super(state, ui);
@@ -121,7 +123,8 @@ public class GameImpl extends Game {
             state.flattenedBoard().spawnMiniSquirrel(player, energy);
         } catch (NotEnoughEnergyException e) {
             ui.message(e.getMessage());
+        } catch (ArrayIndexOutOfBoundsException e) {
+        	System.out.println("asdsadasd");
         }
     }
-
 }
