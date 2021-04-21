@@ -1,6 +1,7 @@
 package de.hsa.fatsquirrel.core;
 
 import de.hsa.fatsquirrel.console.MoveCommand;
+import de.hsa.fatsquirrel.core.*;
 
 public abstract class MasterSquirrel extends PlayerEntity {
     private MoveCommand input;

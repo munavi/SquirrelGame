@@ -88,6 +88,7 @@ public class GameImpl extends Game {
             message += commandType.getName() + commandType.getHelpText() + '\n';
         }
         ui.message(message);
+        processInput();
     }
 
     private void all() {
@@ -102,19 +103,15 @@ public class GameImpl extends Game {
         player.setMoveCommand(new XY(1, 0));
     }
 
-    private void up() {
-        player.setMoveCommand(new XY(0, -1));
-
-
-    }
+    private void up() { player.setMoveCommand(new XY(0, -1)); }
 
     private void down() {
         player.setMoveCommand(new XY(0, 1));
     }
 
     private void master_energy() {
-        player.setMoveCommand(new XY(0,0));
         ui.message("Your current energy: " + player.getEnergy());
+        processInput();
     }
 
     private void spawn_mini(int energy) {
