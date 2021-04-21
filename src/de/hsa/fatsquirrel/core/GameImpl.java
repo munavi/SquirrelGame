@@ -124,7 +124,7 @@ public class GameImpl extends Game {
         } catch (NotEnoughEnergyException e) {
             ui.message(e.getMessage());
         } catch (ArrayIndexOutOfBoundsException e) {
-        	System.out.println("asdsadasd");
+        	System.out.println("(GameImpl line 127; sollte nicht vorkommen");
         }
     }
 }

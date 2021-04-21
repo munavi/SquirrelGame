@@ -19,6 +19,7 @@ public class BoardConfig {
         numberBadBeasts = 2;
         numberGoodPlants = 2;
         numberGoodBeasts = 2;
+        
     }
 
     public XY getSize(){

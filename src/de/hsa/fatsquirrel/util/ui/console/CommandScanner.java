@@ -5,6 +5,7 @@ import java.io.PrintStream;
 import java.util.Scanner;
 
 
+
 public class CommandScanner {
     private final CommandTypeInfo[] commandTypes;
     private final BufferedReader inputReader;

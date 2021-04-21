@@ -25,6 +25,7 @@ public class Board {
     	generateAll("BadPlant");
     	generateAll("BAD_BEAST");
     	generateAll("GOOD_BEAST");
+    	
     	//generateSingleEntity("Hamster");	//test invalid input
     
     }
