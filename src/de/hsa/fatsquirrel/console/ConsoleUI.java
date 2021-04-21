@@ -24,11 +24,11 @@ public class ConsoleUI implements UI {
     public void render(BoardView view) {
         for (int y = 0; y < view.getSize().getY(); y++) {
             for (int x = 0; x < view.getSize().getX(); x++) {
-                System.out.print("|");
+                System.out.print("");
                 EntityType entity = view.getEntityType(x, y);
 
                 if (entity == EntityType.WALL) {
-                    System.out.print("WA");
+                    System.out.print("[]");
                 } else if (entity == EntityType.GOOD_PLANT) {
                     System.out.print("GP");
                 } else if (entity == EntityType.BAD_PLANT) {
