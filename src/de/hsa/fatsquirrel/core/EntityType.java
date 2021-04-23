@@ -32,4 +32,11 @@ public enum EntityType {
             return EntityType.EMPTY_FIELD;
     }
 
+//    public static Entity whichEntity(EntityType entityType){
+//        Entity entity = null;
+//        if(entityType == EntityType.GOOD_BEAST){
+//            return new GoodBeast()
+//        }
+//    }
+
 }

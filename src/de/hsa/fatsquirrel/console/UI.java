@@ -9,6 +9,6 @@ public interface UI {
     Command getCommand();
     void message(String message);
 
-   // void inputLoop();
+    void inputLoop();
 
 }
