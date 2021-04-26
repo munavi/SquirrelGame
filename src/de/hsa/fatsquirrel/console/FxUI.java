@@ -108,7 +108,7 @@ public class FxUI extends Scene implements UI{
                 new EventHandler<KeyEvent>() {
                     @Override
                     public void handle(KeyEvent event) {
-                        System.out.println("Es wurde folgende Taste gedrückt: " + event.getCode() + " bitte behandeln!");
+                        System.out.println("Es wurde folgende Taste gedrueckt: " + event.getCode() + " bitte behandeln!");
                         if (event.getText().equals("w")) {
                             puffer = new Command(GameCommandType.UP, new Object[0]);
                         }

@@ -196,5 +196,10 @@ public class Board {
         this.id = id;
     }
 
+    public void update(State state)
+    {
+        entityBasket.nextStep(state);
+    }
+
 
 }

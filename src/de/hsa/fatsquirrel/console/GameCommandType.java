@@ -12,7 +12,7 @@ public enum GameCommandType implements CommandTypeInfo {
     UP("w", "  * moves the squirrel up"),
     DOWN("s", "  * moves the squirrel down"),
     MASTER_ENERGY("e", "  * shows energy of the master squirrel"),
-    SPAWN_MINI("mini", "<param1>  * spawns a mini squirrel with a starting energy", int.class);
+    SPAWN_MINI("spawn_mini", "<param1>  * spawns a mini squirrel with a starting energy", int.class);
 
     private final String commandName;
     private final String helpText;

@@ -37,21 +37,21 @@ public class State {
     }
 
 
-    public void update() {
-        for (int x = 0; x < board.getEntitySet().getContainer().length; x++) {
-            Entity iterField = board.getEntitySet().getElement(x);
-            if (iterField == null)
-                continue;
-            // If NOT NULL
-            if (iterField instanceof HandOperatedMasterSquirrel) {
-                ((HandOperatedMasterSquirrel) iterField).nextStep(flattenedBoard());
-            }
-            if (Character.class.isInstance(iterField) && !(iterField instanceof HandOperatedMasterSquirrel))
-                ((Character) iterField).nextStep(flattenedBoard());
-
-
-        }
-    }
+//    public void update() {
+//        for (int x = 0; x < board.getEntitySet().getContainer().length; x++) {
+//            Entity iterField = board.getEntitySet().getElement(x);
+//            if (iterField == null)
+//                continue;
+//            // If NOT NULL
+//            if (iterField instanceof HandOperatedMasterSquirrel) {
+//                ((HandOperatedMasterSquirrel) iterField).nextStep(flattenedBoard());
+//            }
+//            if (Character.class.isInstance(iterField) && !(iterField instanceof HandOperatedMasterSquirrel))
+//                ((Character) iterField).nextStep(flattenedBoard());
+//
+//
+//        }
+//    }
 }
 
 

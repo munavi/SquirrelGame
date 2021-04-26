@@ -4,7 +4,7 @@ import de.hsa.fatsquirrel.console.UI;
 
 public abstract class Game {
 
-    protected final int FPS = 10;
+    protected final int FPS = 1;
     private int frameCount = 0;
     protected UI ui;
     protected State state;
@@ -14,7 +14,7 @@ public abstract class Game {
         this.ui = ui;
     }
 
-    public void run() {
+    public void runMultiThreaded() {
         while (true) {
             try {
                 Thread.sleep((int)(1.0f / FPS *1000));
@@ -29,13 +29,30 @@ public abstract class Game {
         }
     }
 
+    public void run() {
+        while (true) {
+            render();
+            processInput();
+            update();
+        }
+    }
+
+
+
+
+
     public abstract void render();
 
     protected abstract void processInput();
 
+//    public void update() {
+//        state.update();
+//    }
+
     public void update() {
-        state.update();
+        state.getBoard().update(state);
     }
+
 
 
 }
