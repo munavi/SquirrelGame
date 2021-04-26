@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ae02f276-41b0-412b-9c44-38dcfacc5768" name="Default Changelist" comment="Eingabe in multi und singetheread funktioniert falsch, gui modus liest keien Befehle ...">
+      <change beforePath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/Launcher.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="AnnotationType" />
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="aufgabe5ohneInputInGui" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1r55K67WjodAXIdG1jokHZX6xKN" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PATH_TO_FX$/javafx.web.jar" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="de.hsa.fatsquirrel.util" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="de.hsa.fatsquirrel.core" />
+      <recent name="de.hsa.fatsquirrel.utilUi" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Launcher">
+    <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="de.hsa.fatsquirrel.Launcher" />
+      <module name="SquirrelGame" />
+      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.controls,javafx.fxml" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.hsa.fatsquirrel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyFavouriteCommandsProcessor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="de.hsa.fatsquirrel.util.ui.consoletest.MyFavouriteCommandsProcessor" />
+      <module name="SquirrelGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.hsa.fatsquirrel.util.ui.consoletest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Launcher" />
+      <item itemvalue="Application.MyFavouriteCommandsProcessor" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Launcher" />
+        <item itemvalue="Application.MyFavouriteCommandsProcessor" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ae02f276-41b0-412b-9c44-38dcfacc5768" name="Default Changelist" comment="" />
+      <created>1618253042359</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618253042359</updated>
+      <workItem from="1618253043633" duration="231000" />
+      <workItem from="1618402879939" duration="5274000" />
+      <workItem from="1618422162516" duration="15000" />
+      <workItem from="1618647971881" duration="13020000" />
+      <workItem from="1618691499774" duration="115000" />
+      <workItem from="1618733619581" duration="9194000" />
+      <workItem from="1618781302986" duration="686000" />
+      <workItem from="1618813542135" duration="4293000" />
+      <workItem from="1618817963634" duration="1034000" />
+      <workItem from="1618924230686" duration="26851000" />
+      <workItem from="1618989857014" duration="9350000" />
+      <workItem from="1619088167092" duration="8324000" />
+      <workItem from="1619165634303" duration="12317000" />
+      <workItem from="1619201670309" duration="187000" />
+      <workItem from="1619201871874" duration="6424000" />
+      <workItem from="1619245409798" duration="6817000" />
+      <workItem from="1619336526437" duration="5692000" />
+      <workItem from="1619345573794" duration="913000" />
+      <workItem from="1619362935183" duration="599000" />
+      <workItem from="1619379948061" duration="117000" />
+      <workItem from="1619424361192" duration="118000" />
+      <workItem from="1619424496181" duration="21000" />
+      <workItem from="1619430419765" duration="1351000" />
+      <workItem from="1619451479149" duration="534000" />
+    </task>
+    <task id="LOCAL-00001" summary="Aufgabe 4 fast fertig, c) Teil fehlt teilweise und ADDI und ADDF geben eine Exception, es muss noch korriegiert werden">
+      <created>1618673135712</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1618673135712</updated>
+    </task>
+    <task id="LOCAL-00002" summary="enum Werte umbennent, da man die GROSS schreiben soll">
+      <created>1618742119043</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1618742119043</updated>
+    </task>
+    <task id="LOCAL-00003" summary="inputLoop hinzugefügt">
+      <created>1618815786237</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1618815786237</updated>
+    </task>
+    <task id="LOCAL-00004" summary="switch hinzugefügt, aber ob er sich lohnt?">
+      <created>1618817819441</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1618817819441</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Mi bewegt sich nicht, anderes ist akzeptabel">
+      <created>1618946014336</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1618946014336</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Funktionierende Aufgabe 4">
+      <created>1618950831388</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1618950831388</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Teil a) nicht fertig, b) ist teilweise und c) ist unklar">
+      <created>1619208542761</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1619208542761</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Eingabe in multi und singetheread funktioniert falsch, gui modus liest keien Befehle ...">
+      <created>1619424462850</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1619424462850</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Aufgabe 4 fast fertig, c) Teil fehlt teilweise und ADDI und ADDF geben eine Exception, es muss noch korriegiert werden" />
+    <MESSAGE value="enum Werte umbennent, da man die GROSS schreiben soll" />
+    <MESSAGE value="inputLoop hinzugefügt" />
+    <MESSAGE value="switch hinzugefügt, aber ob er sich lohnt?" />
+    <MESSAGE value="Mi bewegt sich nicht, anderes ist akzeptabel" />
+    <MESSAGE value="Funktionierende Aufgabe 4" />
+    <MESSAGE value="Teil a) nicht fertig, b) ist teilweise und c) ist unklar" />
+    <MESSAGE value="Eingabe in multi und singetheread funktioniert falsch, gui modus liest keien Befehle ..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Eingabe in multi und singetheread funktioniert falsch, gui modus liest keien Befehle ..." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/de/hsa/fatsquirrel/core/Board.java</url>
+          <line>200</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/de/hsa/fatsquirrel/core/Board.java</url>
+          <line>198</line>
+          <properties class="de.hsa.fatsquirrel.core.Board" method="update">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

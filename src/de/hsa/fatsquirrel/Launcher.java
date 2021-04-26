@@ -96,7 +96,7 @@ public class Launcher extends Application {
     private static void startGameMultiThreaded(Game game) {
         UI ui = new ConsoleUI();
         startGame(game);
-//        ui.inputLoop();
+        ui.inputLoop();
 
     }
 
