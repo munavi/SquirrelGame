@@ -11,4 +11,5 @@ public interface UI {
 
     void inputLoop();
 
+    Command waitForInput();		// sodass man die alte version (wo immer erst auf input gewartet wird) ausfuehren kann; wird nur in Game.runOld() benutzt
 }

@@ -8,6 +8,7 @@ public class Command {
         this.commandType = commandType;
         this.params = params;
     }
+
     public Object[] getParams() {
         return this.params;
     }

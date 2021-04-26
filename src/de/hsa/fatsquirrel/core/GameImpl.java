@@ -95,29 +95,40 @@ public class GameImpl extends Game {
 
     }
 
-    private void left() {
+    private void a() {
         player.setMoveCommand(new XY(-1, 0));
     }
 
-    private void right() {
+    private void d() {
         player.setMoveCommand(new XY(1, 0));
     }
 
-    private void up() { player.setMoveCommand(new XY(0, -1)); }
+    private void w() { player.setMoveCommand(new XY(0, -1)); }
 
-    private void down() {
+    private void s() {
         player.setMoveCommand(new XY(0, 1));
     }
 
-    private void master_energy() {
+    private void e() {	//showMasterEnergy
         ui.message("Your current energy: " + player.getEnergy());
-        processInput();
+        //processInput();	//wenn nicht ausgeklammert, wird es im FX nicht angezeigt
     }
 
     private void spawn_mini(int energy) {
         try {
             player.setMoveCommand(new XY(0,0));
             state.flattenedBoard().spawnMiniSquirrel(player, energy);
+        } catch (NotEnoughEnergyException e) {
+            ui.message(e.getMessage());
+        } catch (ArrayIndexOutOfBoundsException e) {
+        	System.out.println("(GameImpl line 127; sollte nicht vorkommen");
+        }
+    }
+    
+    private void f() {
+        try {
+            player.setMoveCommand(new XY(0,0));
+            state.flattenedBoard().spawnMiniSquirrel(player, 100);
         } catch (NotEnoughEnergyException e) {
             ui.message(e.getMessage());
         } catch (ArrayIndexOutOfBoundsException e) {

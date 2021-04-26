@@ -108,21 +108,24 @@ public class FxUI extends Scene implements UI{
                 new EventHandler<KeyEvent>() {
                     @Override
                     public void handle(KeyEvent event) {
-                        System.out.println("Es wurde folgende Taste gedrueckt: " + event.getCode() + " bitte behandeln!");
+                        System.out.println("Es wurde folgende Taste gedrückt: " + event.getCode() + " bitte behandeln!");
                         if (event.getText().equals("w")) {
-                            puffer = new Command(GameCommandType.UP, new Object[0]);
+                            puffer = new Command(GameCommandType.UP, null);
                         }
                         if (event.getText().equals("a")) {
-                            puffer = new Command(GameCommandType.LEFT, new Object[0]);
+                            puffer = new Command(GameCommandType.LEFT, null);
                         }
                         if (event.getText().equals("s")) {
-                            puffer = new Command(GameCommandType.DOWN, new Object[0]);
+                            puffer = new Command(GameCommandType.DOWN, null);
                         }
                         if (event.getText().equals("d")) {
-                            puffer = new Command(GameCommandType.RIGHT, new Object[0]);
+                            puffer = new Command(GameCommandType.RIGHT, null);
                         }
                         if (event.getText().equals("e")) {
-                            puffer = new Command(GameCommandType.MASTER_ENERGY, new Object[0]);
+                            puffer = new Command(GameCommandType.MASTER_ENERGY, null);
+                        }
+                        if (event.getText().equals("f")) {
+                        	puffer = new Command(GameCommandType.SPAWN_MINI_FX, null);
                         }
                     }
                 }
@@ -144,4 +147,11 @@ public class FxUI extends Scene implements UI{
 //        }
 
     }
+
+
+	@Override
+	public Command waitForInput() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -10,7 +10,7 @@ public class BoardConfig {
 
 
     public BoardConfig(){
-        size = new XY(10,10);
+        size = new XY(20,15);
         this.width = size.getX();
         this.height = size.getY();
         this.wallCount= 2 * (this.height + this.width) - 4;

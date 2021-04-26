@@ -69,7 +69,10 @@ public class ConsoleUI implements UI {
         }
     }
 
-
+    public Command waitForInput() {
+    	puffer = commandScanner.next();
+    	return puffer;
+    }
 
 
 //    @Override
