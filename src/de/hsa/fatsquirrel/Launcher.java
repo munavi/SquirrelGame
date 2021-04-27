@@ -2,12 +2,8 @@ package de.hsa.fatsquirrel;
 
 import de.hsa.fatsquirrel.console.ConsoleUI;
 import de.hsa.fatsquirrel.console.FxUI;
-import de.hsa.fatsquirrel.core.GameImpl;
 import de.hsa.fatsquirrel.console.UI;
 import de.hsa.fatsquirrel.core.*;
-
-import de.hsa.fatsquirrel.core.Board;
-import de.hsa.fatsquirrel.core.Game;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
@@ -27,6 +23,7 @@ public class Launcher extends Application {
         BoardConfig config = new BoardConfig();
         Board board = new Board(config);
         HandOperatedMasterSquirrel player = new HandOperatedMasterSquirrel(0, new XY(5, 5));
+//		MasterSquirrelBot player = new MasterSquirrelBot(0, new XY(5, 5));
         board.getEntitySet().push(player);
         State state = new State(board);
         UI ui = new ConsoleUI();
@@ -87,7 +84,7 @@ public class Launcher extends Application {
             });
             stage.show();
 
-            startGameMultiThreadedInFX(game, ui);
+            startGameMultiThreadedInFX(game);
         }
 
     private static void startGameSingleThreaded(Game game, UI ui) {
@@ -96,15 +93,12 @@ public class Launcher extends Application {
 
 
     private static void startGameMultiThreadedInConsole(Game game, UI ui) {
-        startGame(game);	// ist ein TimerTask
-        ui.inputLoop();		// ist auch ein TimerTask in ConsoleUI()
-        					//sie werden also beide gleichzeitig ausgefuehrt
+        startGame(game);	
+        ui.inputLoop();
     }
     
-    private static void startGameMultiThreadedInFX(Game game, UI ui) {
-        startGame(game);	// ist ein TimerTask
-//        ui.inputLoop();		// ist auch ein TimerTask in ConsoleUI()
-        					//sie werden also beide gleichzeitig ausgefuehrt
+    private static void startGameMultiThreadedInFX(Game game) {
+        startGame(game);
     }
 
         private static boolean containsArgument (String[] args, String arg){

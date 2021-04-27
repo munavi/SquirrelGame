@@ -10,12 +10,19 @@ import java.lang.reflect.InvocationTargetException;
 
 public class GameImpl extends Game {
     HandOperatedMasterSquirrel player;
+    MasterSquirrelBot bot;
     
 
 
     public GameImpl(State state, UI ui, HandOperatedMasterSquirrel player) {
         super(state, ui);
         this.player = player;
+
+    }
+    
+    public GameImpl(State state, UI ui, MasterSquirrelBot bot) {
+        super(state, ui);
+        this.bot = bot;
 
     }
 

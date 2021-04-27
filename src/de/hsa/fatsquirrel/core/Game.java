@@ -17,7 +17,7 @@ public abstract class Game {
         this.ui = ui;
     }
 
-    public void timerTask1() {		//prueft eingabepuffer, updatet rendert
+/*    public void timerTask1() {		//prueft eingabepuffer, updatet rendert
     	Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             public void run() {
@@ -26,7 +26,7 @@ public abstract class Game {
             	render();
             }
         }, 0);
-    }
+    }*/
     
     
     
@@ -37,7 +37,9 @@ public abstract class Game {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            timerTask1();
+            processInput();
+            update();
+        	render();
             frameCount++;
         }
     }

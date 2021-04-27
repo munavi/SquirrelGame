@@ -62,7 +62,11 @@ public class ConsoleUI implements UI {
     @Override
     public void inputLoop() {
         while (true) {
-            timerTask2();
+        	try {
+                puffer = commandScanner.next();
+            } catch (ScanException e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
     
@@ -70,7 +74,7 @@ public class ConsoleUI implements UI {
     	puffer = commandScanner.next();
     }
     
-    public void timerTask2() {		//ueberschreibt eingabepuffer
+/*    public void timerTask2() {		//ueberschreibt eingabepuffer
     	Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             public void run() {
@@ -81,7 +85,7 @@ public class ConsoleUI implements UI {
                 }
             }
         }, 0);
-    }
+    }*/
 
 
 
