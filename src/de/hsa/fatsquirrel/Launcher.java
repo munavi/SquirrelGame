@@ -22,12 +22,15 @@ public class Launcher extends Application {
         }
         BoardConfig config = new BoardConfig();
         Board board = new Board(config);
-        HandOperatedMasterSquirrel player = new HandOperatedMasterSquirrel(0, new XY(5, 5));
+        MasterSquirrel player = new HandOperatedMasterSquirrel(0, new XY(5, 5));
+//        MasterSquirrel bot = new MasterSquirrelBot(1, new XY(5,5));
 //		MasterSquirrelBot player = new MasterSquirrelBot(0, new XY(5, 5));
         board.getEntitySet().push(player);
+//        board.getEntitySet().push(bot);
         State state = new State(board);
         UI ui = new ConsoleUI();
-        Game game = new GameImpl(state, ui, player);
+       Game game = new GameImpl(state, ui, player);
+//        Game game = new GameImpl(state, ui, bot);
         if (containsArgument(args, "single-thread") || containsArgument(args, "--single-thread"))
             startGameSingleThreaded(game, ui);
         else
@@ -63,17 +66,17 @@ public class Launcher extends Application {
 
 
         @Override
-        public void start (Stage stage) {
+        public void start (Stage stage){
             BoardConfig config = new BoardConfig();
             Board board = new Board(config);
             HandOperatedMasterSquirrel player = new HandOperatedMasterSquirrel(0, new XY(5, 5));
             board.getEntitySet().push(player);
             State state = new State(board);
             UI ui = new ConsoleUI();
-            
+
             FxUI fxUI = FxUI.createInstance(new XY(config.getWidth(), config.getHeight()));
             Game game = new GameImpl(state, fxUI, player);
-            
+
             stage.setScene(fxUI);
             stage.setTitle("Diligent Squirrel");
             fxUI.getWindow().setOnCloseRequest(new EventHandler<WindowEvent>() {
@@ -96,7 +99,7 @@ public class Launcher extends Application {
         startGame(game);	
         ui.inputLoop();
     }
-    
+
     private static void startGameMultiThreadedInFX(Game game) {
         startGame(game);
     }

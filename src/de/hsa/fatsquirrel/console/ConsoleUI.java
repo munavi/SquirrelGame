@@ -31,7 +31,7 @@ public class ConsoleUI implements UI {
 
                 if (entity instanceof Wall) {
                     System.out.print("[]");
-                } else if (entity instanceof GoodBeast) {
+                } else if (entity instanceof GoodPlant) {
                     System.out.print("GP");
                 } else if (entity instanceof BadPlant) {
                     System.out.print("BP");
@@ -39,7 +39,7 @@ public class ConsoleUI implements UI {
                     System.out.print("GB");
                 } else if (entity instanceof BadBeast) {
                     System.out.print("BB");
-                } else if (entity instanceof HandOperatedMasterSquirrel) {
+                } else if (entity instanceof MasterSquirrel) {
                     System.out.print("Ma");
                 } else if (entity instanceof MiniSquirrel) {
                     System.out.print("Mi");

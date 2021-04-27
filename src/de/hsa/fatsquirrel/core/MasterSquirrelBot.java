@@ -3,15 +3,28 @@ package de.hsa.fatsquirrel.core;
 import de.hsa.fatsquirrel.botapi.BotController;
 import de.hsa.fatsquirrel.botapi.BotControllerFactoryImpl;
 import de.hsa.fatsquirrel.botapi.ControllerContext;
+import de.hsa.fatsquirrel.botapi.MasterSquirrelBotController;
 
 public class MasterSquirrelBot extends MasterSquirrel{
 
     private BotController masterBotController;
+    private int viewRadius = 5;
 
 
     public MasterSquirrelBot(int id, XY loc) {
         super(id, loc);
         masterBotController = new BotControllerFactoryImpl().createMasterBotController();
+    }
+
+    public void nextStep(EntityContext context){
+        masterBotController.nextStep(new ControllerContextImpl(context,
+                new XY(this.getPosition().getX() - viewRadius, this.getPosition().getY() - viewRadius),
+                new XY(this.getPosition().getX() + viewRadius, this.getPosition().getY() + viewRadius)));
+    }
+
+    @Override
+    public void setMoveCommand(XY position) {
+
     }
 
     @Override

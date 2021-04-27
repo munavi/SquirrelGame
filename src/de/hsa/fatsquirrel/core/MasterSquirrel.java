@@ -41,4 +41,6 @@ public abstract class MasterSquirrel extends PlayerEntity {
     public String toString(){
         return super.toString() + " of type " + this.getClass()+ " ID: "+ this.getId() + " Location: " + this.getPosition() + " Energy: " + this.getEnergy();
     }
+
+    public abstract void setMoveCommand(XY position);
 }

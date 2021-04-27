@@ -9,8 +9,9 @@ import java.lang.reflect.InvocationTargetException;
 
 
 public class GameImpl extends Game {
-    HandOperatedMasterSquirrel player;
+//    HandOperatedMasterSquirrel player;
     MasterSquirrelBot bot;
+    MasterSquirrel player;
     
 
 
@@ -19,10 +20,17 @@ public class GameImpl extends Game {
         this.player = player;
 
     }
-    
+
+
     public GameImpl(State state, UI ui, MasterSquirrelBot bot) {
         super(state, ui);
         this.bot = bot;
+
+    }
+
+    public GameImpl(State state, UI ui, MasterSquirrel player) {
+        super(state, ui);
+        this.player = player;
 
     }
 
@@ -117,6 +125,7 @@ public class GameImpl extends Game {
     }
 
     private void e() {	//masterenergy
+        player.setMoveCommand(new XY(0,0));
         ui.message("Your current energy: " + player.getEnergy());
         processInput();
     }

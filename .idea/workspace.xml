@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae02f276-41b0-412b-9c44-38dcfacc5768" name="Default Changelist" comment="Eingabe in multi und singetheread funktioniert falsch, gui modus liest keien Befehle ...">
+    <list default="true" id="ae02f276-41b0-412b-9c44-38dcfacc5768" name="Default Changelist" comment="stand: 26.04 17:45">
+      <change afterPath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/core/BotGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/Launcher$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/Launcher$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/Launcher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/botapi/MasterSquirrelBotController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/botapi/MasterSquirrelBotController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/botapi/MiniSquirrelBotController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/botapi/MiniSquirrelBotController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/console/ConsoleUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/console/ConsoleUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/console/FxUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/console/FxUI$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/console/FxUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/console/FxUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/console/GameCommandType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/console/GameCommandType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/console/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/console/UI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/core/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/core/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/core/GameImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/core/GameImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/core/MasterSquirrel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/core/MasterSquirrel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/core/MasterSquirrelBot$ControllerContextImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/core/MasterSquirrelBot$ControllerContextImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/core/MasterSquirrelBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/core/MasterSquirrelBot.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/botapi/MasterSquirrelBotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/botapi/MasterSquirrelBotController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/botapi/MiniSquirrelBotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/botapi/MiniSquirrelBotController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/console/ConsoleUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/console/ConsoleUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/console/FxUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/console/FxUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/core/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/core/GameImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/core/GameImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/core/MasterSquirrel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/core/MasterSquirrel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/core/MasterSquirrelBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/core/MasterSquirrelBot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,15 +38,15 @@
       <list>
         <option value="Enum" />
         <option value="AnnotationType" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="aufgabe5ohneInputInGui" />
+        <entry key="$PROJECT_DIR$" value="Aufgabe5_26.04_Stand" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,9 +67,11 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -60,10 +86,25 @@
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.hsa.fatsquirrel.Launcher" />
       <module name="SquirrelGame" />
+      <option name="PROGRAM_PARAMETERS" value="gui" />
       <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="de.hsa.fatsquirrel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Launcher1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="de.hsa.fatsquirrel.botapi.Launcher1" />
+      <module name="SquirrelGame" />
+      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.controls,javafx.fxml" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.hsa.fatsquirrel.botapi.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -84,13 +125,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Launcher" />
       <item itemvalue="Application.MyFavouriteCommandsProcessor" />
+      <item itemvalue="Application.Launcher1" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Launcher" />
+        <item itemvalue="Application.Launcher1" />
         <item itemvalue="Application.MyFavouriteCommandsProcessor" />
       </list>
     </recent_temporary>
@@ -126,7 +182,15 @@
       <workItem from="1619424361192" duration="118000" />
       <workItem from="1619424496181" duration="21000" />
       <workItem from="1619430419765" duration="1351000" />
-      <workItem from="1619451479149" duration="534000" />
+      <workItem from="1619451479149" duration="4204000" />
+      <workItem from="1619511616685" duration="87000" />
+      <workItem from="1619523714069" duration="2667000" />
+      <workItem from="1619530245165" duration="47000" />
+      <workItem from="1619530303077" duration="88000" />
+      <workItem from="1619530403046" duration="493000" />
+      <workItem from="1619530908439" duration="546000" />
+      <workItem from="1619531470190" duration="12621000" />
+      <workItem from="1619545024056" duration="2386000" />
     </task>
     <task id="LOCAL-00001" summary="Aufgabe 4 fast fertig, c) Teil fehlt teilweise und ADDI und ADDF geben eine Exception, es muss noch korriegiert werden">
       <created>1618673135712</created>
@@ -184,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619424462850</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="stand: 26.04 17:45">
+      <created>1619452056382</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1619452056382</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,7 +282,8 @@
     <MESSAGE value="Funktionierende Aufgabe 4" />
     <MESSAGE value="Teil a) nicht fertig, b) ist teilweise und c) ist unklar" />
     <MESSAGE value="Eingabe in multi und singetheread funktioniert falsch, gui modus liest keien Befehle ..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Eingabe in multi und singetheread funktioniert falsch, gui modus liest keien Befehle ..." />
+    <MESSAGE value="stand: 26.04 17:45" />
+    <option name="LAST_COMMIT_MESSAGE" value="stand: 26.04 17:45" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -220,6 +292,16 @@
           <url>file://$PROJECT_DIR$/src/de/hsa/fatsquirrel/core/Board.java</url>
           <line>200</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/de/hsa/fatsquirrel/Launcher.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/de/hsa/fatsquirrel/Launcher.java</url>
+          <line>103</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/de/hsa/fatsquirrel/core/Board.java</url>

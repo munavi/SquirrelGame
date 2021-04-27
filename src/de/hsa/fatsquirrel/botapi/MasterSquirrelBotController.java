@@ -6,7 +6,7 @@ public class MasterSquirrelBotController implements BotController {
 
     @Override
     public void nextStep(ControllerContext view) {
-        view.move(XY.randomDirection());
+//        view.move(XY.randomDirection());
     }
 
 

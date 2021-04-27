@@ -17,17 +17,6 @@ public abstract class Game {
         this.ui = ui;
     }
 
-/*    public void timerTask1() {		//prueft eingabepuffer, updatet rendert
-    	Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            public void run() {
-            	processInput();
-                update();
-            	render();
-            }
-        }, 0);
-    }*/
-    
     
     
     public void runMultiThreaded() {
@@ -60,10 +49,6 @@ public abstract class Game {
     public abstract void render();
 
     protected abstract void processInput();
-
-//    public void update() {
-//        state.update();
-//    }
 
     public void update() {
         state.getBoard().update(state);

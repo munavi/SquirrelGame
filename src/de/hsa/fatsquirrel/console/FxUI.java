@@ -138,13 +138,6 @@ public class FxUI extends Scene implements UI{
     @Override
     public void inputLoop() {
 
-//        while (true) {
-//            try {
-//                puffer = commandScanner.next();
-//            } catch (ScanException e) {
-//                System.out.println(e.getMessage());
-//            }
-//        }
 
     }
 
