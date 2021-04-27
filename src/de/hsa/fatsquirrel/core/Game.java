@@ -1,5 +1,8 @@
 package de.hsa.fatsquirrel.core;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import de.hsa.fatsquirrel.console.UI;
 
 public abstract class Game {
@@ -14,6 +17,19 @@ public abstract class Game {
         this.ui = ui;
     }
 
+    public void timerTask1() {		//prueft eingabepuffer, updatet rendert
+    	Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            public void run() {
+            	processInput();
+                update();
+            	render();
+            }
+        }, 0);
+    }
+    
+    
+    
     public void runMultiThreaded() {
         while (true) {
             try {
@@ -21,17 +37,15 @@ public abstract class Game {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
-            render();
-            processInput();
-            update();
+            timerTask1();
             frameCount++;
         }
     }
 
     public void run() {
         while (true) {
-            render();
+        	render();
+        	ui.singleThreadInput();
             processInput();
             update();
         }

@@ -8,6 +8,8 @@ import de.hsa.fatsquirrel.util.ui.console.ScanException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class ConsoleUI implements UI {
     private Command puffer = null;
@@ -55,18 +57,30 @@ public class ConsoleUI implements UI {
         Command command = puffer;
         puffer = null;
         return command;
-
     }
 
     @Override
     public void inputLoop() {
         while (true) {
-            try {
-                puffer = commandScanner.next();
-            } catch (ScanException e) {
-                System.out.println(e.getMessage());
-            }
+            timerTask2();
         }
+    }
+    
+    public void singleThreadInput() {
+    	puffer = commandScanner.next();
+    }
+    
+    public void timerTask2() {		//ueberschreibt eingabepuffer
+    	Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            public void run() {
+            	try {
+                    puffer = commandScanner.next();
+                } catch (ScanException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        }, 0);
     }
 
 

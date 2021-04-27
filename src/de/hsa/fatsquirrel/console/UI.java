@@ -7,8 +7,9 @@ public interface UI {
 
     void render(BoardView view);
     Command getCommand();
+    
     void message(String message);
 
     void inputLoop();
-
+    void singleThreadInput();		//fuer Launcher.startGameSingleThreaded()
 }
