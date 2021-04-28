@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>de.hsa.fatsquirrel.console</OriginalElement>
+  <nodes>
+    <node x="553.0" y="-34.0">de.hsa.fatsquirrel.console.GameCommandType</node>
+    <node x="-45.0" y="159.0">de.hsa.fatsquirrel.console.FxUI</node>
+    <node x="246.0" y="181.0">de.hsa.fatsquirrel.console.ConsoleUI</node>
+    <node x="-45.0" y="503.0">de.hsa.fatsquirrel.console.MoveCommand</node>
+    <node x="133.75" y="-34.0">de.hsa.fatsquirrel.console.UI</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="de.hsa.fatsquirrel.console.ConsoleUI" target="de.hsa.fatsquirrel.console.UI" relationship="REALIZATION">
+      <point x="0.0" y="-127.5" />
+      <point x="377.0" y="134.0" />
+      <point x="233.75" y="134.0" />
+      <point x="0.0" y="71.5" />
+    </edge>
+    <edge source="de.hsa.fatsquirrel.console.FxUI" target="de.hsa.fatsquirrel.console.UI" relationship="REALIZATION">
+      <point x="0.0" y="-149.5" />
+      <point x="90.5" y="134.0" />
+      <point x="233.75" y="134.0" />
+      <point x="0.0" y="71.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="303.0" y="325.0" />
+  <SelectedNodes>
+    <node>de.hsa.fatsquirrel.console.GameCommandType</node>
+    <node>de.hsa.fatsquirrel.console.FxUI</node>
+    <node>de.hsa.fatsquirrel.console.ConsoleUI</node>
+    <node>de.hsa.fatsquirrel.console.MoveCommand</node>
+    <node>de.hsa.fatsquirrel.console.UI</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

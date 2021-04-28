@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>de.hsa.fatsquirrel.util.ui.consoletest</OriginalElement>
+  <nodes>
+    <node x="0.0" y="0.0">de.hsa.fatsquirrel.util.ui.consoletest.MyFavouriteCommandType</node>
+    <node x="416.0" y="0.0">de.hsa.fatsquirrel.util.ui.consoletest.MyFavouriteCommandsProcessor</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="319.0" y="133.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

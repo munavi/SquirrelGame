@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>de.hsa.fatsquirrel.core</OriginalElement>
+  <nodes>
+    <node x="-4054.0" y="-407.0">de.hsa.fatsquirrel.core.GoodPlant</node>
+    <node x="-4895.068181818182" y="-168.0">de.hsa.fatsquirrel.core.PlayerEntity</node>
+    <node x="-4949.5" y="387.0">de.hsa.fatsquirrel.core.MasterSquirrelBot</node>
+    <node x="-4421.068181818182" y="-201.0">de.hsa.fatsquirrel.core.GoodBeast</node>
+    <node x="-4661.0" y="-384.5">de.hsa.fatsquirrel.core.Character</node>
+    <node x="-3944.0" y="915.0">de.hsa.fatsquirrel.core.XY</node>
+    <node x="-3845.0" y="-800.0">de.hsa.fatsquirrel.core.EntityContext</node>
+    <node x="-3670.0" y="915.0">de.hsa.fatsquirrel.core.EntitySet</node>
+    <node x="-4269.0" y="915.0">de.hsa.fatsquirrel.core.EntityType</node>
+    <node x="-4557.0" y="915.0">de.hsa.fatsquirrel.core.Board</node>
+    <node x="-4940.5" y="615.0">de.hsa.fatsquirrel.core.MasterSquirrelBot.ControllerContextImpl</node>
+    <node x="-4355.5" y="-800.0">de.hsa.fatsquirrel.core.Entity</node>
+    <node x="-5261.0" y="126.0">de.hsa.fatsquirrel.core.MiniSquirrel</node>
+    <node x="-4238.0" y="-407.0">de.hsa.fatsquirrel.core.BadPlant</node>
+    <node x="-3110.0" y="915.0">de.hsa.fatsquirrel.core.NotEnoughEnergyException</node>
+    <node x="-3707.0" y="-475.0">de.hsa.fatsquirrel.core.FlattenedBoard</node>
+    <node x="-4816.0" y="915.0">de.hsa.fatsquirrel.core.BoardConfig</node>
+    <node x="-5166.0" y="915.0">de.hsa.fatsquirrel.core.Game</node>
+    <node x="-5271.5" y="431.5">de.hsa.fatsquirrel.core.MiniSquirrelBot</node>
+    <node x="-5280.0" y="615.0">de.hsa.fatsquirrel.core.MiniSquirrelBot.ControllerContextImpl</node>
+    <node x="-4660.068181818182" y="-234.0">de.hsa.fatsquirrel.core.BadBeast</node>
+    <node x="-4592.5" y="376.0">de.hsa.fatsquirrel.core.HandOperatedMasterSquirrel</node>
+    <node x="-5280.0" y="1220.0">de.hsa.fatsquirrel.core.GameImpl</node>
+    <node x="-3523.0" y="-712.0">de.hsa.fatsquirrel.core.BoardView</node>
+    <node x="-4732.75" y="115.0">de.hsa.fatsquirrel.core.MasterSquirrel</node>
+    <node x="-4422.0" y="-407.0">de.hsa.fatsquirrel.core.Wall</node>
+    <node x="-3412.0" y="915.0">de.hsa.fatsquirrel.core.State</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="de.hsa.fatsquirrel.core.MiniSquirrel" target="de.hsa.fatsquirrel.core.PlayerEntity" relationship="GENERALIZATION">
+      <point x="0.0" y="-94.5" />
+      <point x="-5120.5" y="90.0" />
+      <point x="-4787.568181818182" y="90.0" />
+      <point x="0.0" y="83.5" />
+    </edge>
+    <edge source="de.hsa.fatsquirrel.core.MasterSquirrel" target="de.hsa.fatsquirrel.core.PlayerEntity" relationship="GENERALIZATION">
+      <point x="0.0" y="-105.5" />
+      <point x="-4618.75" y="90.0" />
+      <point x="-4787.568181818182" y="90.0" />
+      <point x="0.0" y="83.5" />
+    </edge>
+    <edge source="de.hsa.fatsquirrel.core.FlattenedBoard" target="de.hsa.fatsquirrel.core.EntityContext" relationship="REALIZATION">
+      <point x="-75.5" y="-237.5" />
+      <point x="-3631.5" y="-500.0" />
+      <point x="-3694.0" y="-500.0" />
+      <point x="0.0" y="137.5" />
+    </edge>
+    <edge source="de.hsa.fatsquirrel.core.Character" target="de.hsa.fatsquirrel.core.Entity" relationship="GENERALIZATION">
+      <point x="0.0" y="-39.0" />
+      <point x="-4551.5" y="-432.0" />
+      <point x="-4248.0" y="-432.0" />
+      <point x="0.0" y="171.5" />
+    </edge>
+    <edge source="de.hsa.fatsquirrel.core.PlayerEntity" target="de.hsa.fatsquirrel.core.Character" relationship="GENERALIZATION">
+      <point x="0.0" y="-83.5" />
+      <point x="-4787.568181818182" y="-259.0" />
+      <point x="-4551.5" y="-259.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="de.hsa.fatsquirrel.core.HandOperatedMasterSquirrel" target="de.hsa.fatsquirrel.core.MasterSquirrel" relationship="GENERALIZATION">
+      <point x="0.0" y="-94.5" />
+      <point x="-4456.5" y="351.0" />
+      <point x="-4618.75" y="351.0" />
+      <point x="0.0" y="105.5" />
+    </edge>
+    <edge source="de.hsa.fatsquirrel.core.GoodBeast" target="de.hsa.fatsquirrel.core.Character" relationship="GENERALIZATION">
+      <point x="0.0" y="-116.5" />
+      <point x="-4311.568181818182" y="-259.0" />
+      <point x="-4551.5" y="-259.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="de.hsa.fatsquirrel.core.MiniSquirrelBot" target="de.hsa.fatsquirrel.core.MiniSquirrel" relationship="GENERALIZATION">
+      <point x="0.0" y="-39.0" />
+      <point x="0.0" y="94.5" />
+    </edge>
+    <edge source="de.hsa.fatsquirrel.core.MasterSquirrelBot.ControllerContextImpl" target="de.hsa.fatsquirrel.core.MasterSquirrelBot" relationship="INNER_CLASS">
+      <point x="0.0" y="-127.5" />
+      <point x="0.0" y="83.5" />
+    </edge>
+    <edge source="de.hsa.fatsquirrel.core.BadPlant" target="de.hsa.fatsquirrel.core.Entity" relationship="GENERALIZATION">
+      <point x="0.0" y="-61.5" />
+      <point x="-4156.0" y="-432.0" />
+      <point x="-4248.0" y="-432.0" />
+      <point x="0.0" y="171.5" />
+    </edge>
+    <edge source="de.hsa.fatsquirrel.core.Wall" target="de.hsa.fatsquirrel.core.Entity" relationship="GENERALIZATION">
+      <point x="0.0" y="-61.5" />
+      <point x="-4340.0" y="-432.0" />
+      <point x="-4248.0" y="-432.0" />
+      <point x="0.0" y="171.5" />
+    </edge>
+    <edge source="de.hsa.fatsquirrel.core.MiniSquirrelBot.ControllerContextImpl" target="de.hsa.fatsquirrel.core.MiniSquirrelBot" relationship="INNER_CLASS">
+      <point x="0.0" y="-127.5" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="de.hsa.fatsquirrel.core.GameImpl" target="de.hsa.fatsquirrel.core.Game" relationship="GENERALIZATION">
+      <point x="0.0" y="-182.5" />
+      <point x="0.0" y="127.5" />
+    </edge>
+    <edge source="de.hsa.fatsquirrel.core.BadBeast" target="de.hsa.fatsquirrel.core.Character" relationship="GENERALIZATION">
+      <point x="0.0" y="-149.5" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="de.hsa.fatsquirrel.core.FlattenedBoard" target="de.hsa.fatsquirrel.core.BoardView" relationship="REALIZATION">
+      <point x="75.5" y="-237.5" />
+      <point x="-3480.5" y="-500.0" />
+      <point x="-3418.0" y="-500.0" />
+      <point x="0.0" y="49.5" />
+    </edge>
+    <edge source="de.hsa.fatsquirrel.core.GoodPlant" target="de.hsa.fatsquirrel.core.Entity" relationship="GENERALIZATION">
+      <point x="0.0" y="-61.5" />
+      <point x="-3972.0" y="-432.0" />
+      <point x="-4248.0" y="-432.0" />
+      <point x="0.0" y="171.5" />
+    </edge>
+    <edge source="de.hsa.fatsquirrel.core.MasterSquirrelBot" target="de.hsa.fatsquirrel.core.MasterSquirrel" relationship="GENERALIZATION">
+      <point x="0.0" y="-83.5" />
+      <point x="-4781.0" y="351.0" />
+      <point x="-4618.75" y="351.0" />
+      <point x="0.0" y="105.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.7000000000000001" showDependencies="false" x="-3878.857142857142" y="300.42857142857133" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

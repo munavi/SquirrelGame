@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>de.hsa.fatsquirrel.util.ui.console</OriginalElement>
+  <nodes>
+    <node x="-99.0" y="51.0">de.hsa.fatsquirrel.util.ui.console.Command</node>
+    <node x="-99.0" y="-161.0">de.hsa.fatsquirrel.util.ui.console.CommandScanner</node>
+    <node x="156.0" y="241.0">de.hsa.fatsquirrel.util.ui.console.ScanException</node>
+    <node x="-99.0" y="241.0">de.hsa.fatsquirrel.util.ui.console.CommandTypeInfo</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="96.0" y="127.5" />
+  <SelectedNodes>
+    <node>de.hsa.fatsquirrel.util.ui.console.Command</node>
+    <node>de.hsa.fatsquirrel.util.ui.console.CommandScanner</node>
+    <node>de.hsa.fatsquirrel.util.ui.console.ScanException</node>
+    <node>de.hsa.fatsquirrel.util.ui.console.CommandTypeInfo</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

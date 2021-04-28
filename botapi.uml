@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>de.hsa.fatsquirrel.botapi</OriginalElement>
+  <nodes>
+    <node x="0.0" y="276.0">de.hsa.fatsquirrel.botapi.BotControllerFactoryImpl</node>
+    <node x="347.0" y="149.0">de.hsa.fatsquirrel.botapi.ControllerContext</node>
+    <node x="282.0" y="-124.0">de.hsa.fatsquirrel.botapi.BotController</node>
+    <node x="282.0" y="3.5">de.hsa.fatsquirrel.botapi.MiniSquirrelBotController</node>
+    <node x="0.0" y="149.0">de.hsa.fatsquirrel.botapi.BotControllerFactory</node>
+    <node x="549.0" y="-19.0">de.hsa.fatsquirrel.botapi.HandOperatedController</node>
+    <node x="0.0" y="3.5">de.hsa.fatsquirrel.botapi.MasterSquirrelBotController</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="de.hsa.fatsquirrel.botapi.MiniSquirrelBotController" target="de.hsa.fatsquirrel.botapi.BotController" relationship="REALIZATION">
+      <point x="0.0" y="-39.0" />
+      <point x="0.0" y="27.5" />
+    </edge>
+    <edge source="de.hsa.fatsquirrel.botapi.HandOperatedController" target="de.hsa.fatsquirrel.botapi.BotController" relationship="REALIZATION">
+      <point x="0.0" y="-61.5" />
+      <point x="672.5" y="-44.0" />
+      <point x="405.5" y="-44.0" />
+      <point x="0.0" y="27.5" />
+    </edge>
+    <edge source="de.hsa.fatsquirrel.botapi.BotControllerFactoryImpl" target="de.hsa.fatsquirrel.botapi.BotControllerFactory" relationship="REALIZATION">
+      <point x="0.0" y="-50.0" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="de.hsa.fatsquirrel.botapi.MasterSquirrelBotController" target="de.hsa.fatsquirrel.botapi.BotController" relationship="REALIZATION">
+      <point x="0.0" y="-39.0" />
+      <point x="131.0" y="-44.0" />
+      <point x="405.5" y="-44.0" />
+      <point x="0.0" y="27.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="560.0" y="132.5" />
+  <SelectedNodes>
+    <node>de.hsa.fatsquirrel.botapi.BotControllerFactoryImpl</node>
+    <node>de.hsa.fatsquirrel.botapi.ControllerContext</node>
+    <node>de.hsa.fatsquirrel.botapi.BotController</node>
+    <node>de.hsa.fatsquirrel.botapi.MiniSquirrelBotController</node>
+    <node>de.hsa.fatsquirrel.botapi.BotControllerFactory</node>
+    <node>de.hsa.fatsquirrel.botapi.HandOperatedController</node>
+    <node>de.hsa.fatsquirrel.botapi.MasterSquirrelBotController</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

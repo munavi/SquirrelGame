@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>de.hsa.fatsquirrel</OriginalElement>
+  <nodes>
+    <node x="0.0" y="255.0">de.hsa.fatsquirrel.botapi</node>
+    <node x="194.0" y="255.0">de.hsa.fatsquirrel.console</node>
+    <node x="8.0" y="335.0">de.hsa.fatsquirrel.core</node>
+    <node x="0.0" y="410.0">de.hsa.fatsquirrel.util</node>
+    <node x="0.0" y="0.0">de.hsa.fatsquirrel.Launcher</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="de.hsa.fatsquirrel.core" target="de.hsa.fatsquirrel.botapi" relationship="REALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="143.5" y="138.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -1,0 +1,49 @@
+<changelist name="Uncommitted_changes_before_Update_at_27_04_21,_18_01_[Default_Changelist]" date="1619539310846" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_04_21,_18_01_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 27.04.21, 18:01 [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/SquirrelGame/de/hsa/fatsquirrel/console/ConsoleUI.class" />
+    <option name="AFTER_PATH" value="out/production/SquirrelGame/de/hsa/fatsquirrel/console/ConsoleUI.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_04_21,_18_01_[Default_Changelist]/ConsoleUI.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/SquirrelGame/de/hsa/fatsquirrel/core/GameImpl.class" />
+    <option name="AFTER_PATH" value="out/production/SquirrelGame/de/hsa/fatsquirrel/core/GameImpl.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_04_21,_18_01_[Default_Changelist]/GameImpl.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/SquirrelGame/de/hsa/fatsquirrel/Launcher$2.class" />
+    <option name="AFTER_PATH" value="out/production/SquirrelGame/de/hsa/fatsquirrel/Launcher$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_04_21,_18_01_[Default_Changelist]/Launcher$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/SquirrelGame/de/hsa/fatsquirrel/console/UI.class" />
+    <option name="AFTER_PATH" value="out/production/SquirrelGame/de/hsa/fatsquirrel/console/UI.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_04_21,_18_01_[Default_Changelist]/UI.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/SquirrelGame/de/hsa/fatsquirrel/console/GameCommandType.class" />
+    <option name="AFTER_PATH" value="out/production/SquirrelGame/de/hsa/fatsquirrel/console/GameCommandType.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_04_21,_18_01_[Default_Changelist]/GameCommandType.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/SquirrelGame/de/hsa/fatsquirrel/console/FxUI$3.class" />
+    <option name="AFTER_PATH" value="out/production/SquirrelGame/de/hsa/fatsquirrel/console/FxUI$3.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_04_21,_18_01_[Default_Changelist]/FxUI$3.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/SquirrelGame/de/hsa/fatsquirrel/Launcher.class" />
+    <option name="AFTER_PATH" value="out/production/SquirrelGame/de/hsa/fatsquirrel/Launcher.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_04_21,_18_01_[Default_Changelist]/Launcher.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/SquirrelGame/de/hsa/fatsquirrel/core/Game.class" />
+    <option name="AFTER_PATH" value="out/production/SquirrelGame/de/hsa/fatsquirrel/core/Game.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_04_21,_18_01_[Default_Changelist]/Game.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/SquirrelGame/de/hsa/fatsquirrel/console/FxUI.class" />
+    <option name="AFTER_PATH" value="out/production/SquirrelGame/de/hsa/fatsquirrel/console/FxUI.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_04_21,_18_01_[Default_Changelist]/FxUI.class" />
+  </binary>
+</changelist>

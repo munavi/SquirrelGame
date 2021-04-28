@@ -1,0 +1,157 @@
+Index: src/de/hsa/fatsquirrel/Launcher.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package de.hsa.fatsquirrel;\n\nimport de.hsa.fatsquirrel.console.ConsoleUI;\nimport de.hsa.fatsquirrel.console.FxUI;\nimport de.hsa.fatsquirrel.core.GameImpl;\nimport de.hsa.fatsquirrel.console.UI;\nimport de.hsa.fatsquirrel.core.*;\n\nimport de.hsa.fatsquirrel.core.Board;\nimport de.hsa.fatsquirrel.core.Game;\nimport javafx.application.Application;\nimport javafx.event.EventHandler;\nimport javafx.stage.Stage;\nimport javafx.stage.WindowEvent;\n\nimport java.util.Timer;\nimport java.util.TimerTask;\n\n\npublic class Launcher extends Application {\n\n    public static void main(String[] args) {\n        if (containsArgument(args, \"gui\") || containsArgument(args, \"--gui\")) {\n            Application.launch(new String[]{args[0]});\n            return;\n        }\n        BoardConfig config = new BoardConfig();\n        Board board = new Board(config);\n        HandOperatedMasterSquirrel player = new HandOperatedMasterSquirrel(0, new XY(5, 5));\n        board.getEntitySet().push(player);\n        State state = new State(board);\n        UI ui = new ConsoleUI();\n        Game game = new GameImpl(state, ui, player);\n        if (containsArgument(args, \"single-thread\") || containsArgument(args, \"--single-thread\"))\n            startGameSingleThreaded(game, ui);\n        else\n            startGameMultiThreadedInConsole(game, ui);\n    }\n\n\n\n//    public static void main(String[] args) {\n//\n//        BoardConfig config = new BoardConfig();\n//        Board board = new Board(config);\n//        HandOperatedMasterSquirrel player = new HandOperatedMasterSquirrel(0, new XY(5, 5));\n//        board.getEntitySet().push(player);\n//        State state = new State(board);\n//        UI ui = new ConsoleUI();\n//        Game game = new GameImpl(state, ui, player);\n//        startGame(game);\n//        ui.inputLoop();\n//\n//\n//    }\n\n\n        private static void startGame (Game game) {\n            Timer timer = new Timer();\n            timer.schedule(new TimerTask() {\n                public void run() {\n                    game.runMultiThreaded();\n                }\n            }, 1000);\n        }\n\n\n        @Override\n        public void start (Stage stage) {\n            BoardConfig config = new BoardConfig();\n            Board board = new Board(config);\n            HandOperatedMasterSquirrel player = new HandOperatedMasterSquirrel(0, new XY(5, 5));\n            board.getEntitySet().push(player);\n            State state = new State(board);\n            UI ui = new ConsoleUI();\n            \n            FxUI fxUI = FxUI.createInstance(new XY(config.getWidth(), config.getHeight()));\n            Game game = new GameImpl(state, fxUI, player);\n            \n            stage.setScene(fxUI);\n            stage.setTitle(\"Diligent Squirrel\");\n            fxUI.getWindow().setOnCloseRequest(new EventHandler<WindowEvent>() {\n                @Override\n                public void handle(WindowEvent evt) {\n                    System.exit(-1);\n                }\n            });\n            stage.show();\n\n            startGameMultiThreadedInFX(game, ui);\n        }\n\n    private static void startGameSingleThreaded(Game game, UI ui) {\n        game.run();\n    }\n\n\n    private static void startGameMultiThreadedInConsole(Game game, UI ui) {\n        startGame(game);\t// ist ein TimerTask\n        ui.inputLoop();\t\t// ist auch ein TimerTask in ConsoleUI()\n        \t\t\t\t\t//sie werden also beide gleichzeitig ausgefuehrt\n    }\n    \n    private static void startGameMultiThreadedInFX(Game game, UI ui) {\n        startGame(game);\t// ist ein TimerTask\n//        ui.inputLoop();\t\t// ist auch ein TimerTask in ConsoleUI()\n        \t\t\t\t\t//sie werden also beide gleichzeitig ausgefuehrt\n    }\n\n        private static boolean containsArgument (String[] args, String arg){\n            for (int i = 0; i < args.length; i++) {\n                if (args[i].equals(arg))\n                    return true;\n            }\n            return false;\n        }\n    }\n\n\n\n//    }\n//}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/de/hsa/fatsquirrel/Launcher.java b/src/de/hsa/fatsquirrel/Launcher.java
+--- a/src/de/hsa/fatsquirrel/Launcher.java	(revision dc01492abed16fdb613d2cf04dbae2ac9f219939)
++++ b/src/de/hsa/fatsquirrel/Launcher.java	(date 1619529904093)
+@@ -66,17 +66,17 @@
+ 
+ 
+         @Override
+-        public void start (Stage stage) {
++        public void start (Stage stage){
+             BoardConfig config = new BoardConfig();
+             Board board = new Board(config);
+             HandOperatedMasterSquirrel player = new HandOperatedMasterSquirrel(0, new XY(5, 5));
+             board.getEntitySet().push(player);
+             State state = new State(board);
+             UI ui = new ConsoleUI();
+-            
++
+             FxUI fxUI = FxUI.createInstance(new XY(config.getWidth(), config.getHeight()));
+             Game game = new GameImpl(state, fxUI, player);
+-            
++
+             stage.setScene(fxUI);
+             stage.setTitle("Diligent Squirrel");
+             fxUI.getWindow().setOnCloseRequest(new EventHandler<WindowEvent>() {
+@@ -100,7 +100,7 @@
+         ui.inputLoop();		// ist auch ein TimerTask in ConsoleUI()
+         					//sie werden also beide gleichzeitig ausgefuehrt
+     }
+-    
++
+     private static void startGameMultiThreadedInFX(Game game, UI ui) {
+         startGame(game);	// ist ein TimerTask
+ //        ui.inputLoop();		// ist auch ein TimerTask in ConsoleUI()
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"ae02f276-41b0-412b-9c44-38dcfacc5768\" name=\"Default Changelist\" comment=\"Eingabe in multi und singetheread funktioniert falsch, gui modus liest keien Befehle ...\">\n      <change beforePath=\"$PROJECT_DIR$/src/de/hsa/fatsquirrel/Launcher.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/de/hsa/fatsquirrel/Launcher.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Enum\" />\n        <option value=\"AnnotationType\" />\n        <option value=\"Class\" />\n        <option value=\"Interface\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"aufgabe5ohneInputInGui\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"ProjectId\" id=\"1r55K67WjodAXIdG1jokHZX6xKN\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n    <property name=\"aspect.path.notification.shown\" value=\"true\" />\n    <property name=\"last_opened_file_path\" value=\"$PATH_TO_FX$/javafx.web.jar\" />\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\n    <property name=\"project.structure.last.edited\" value=\"Modules\" />\n    <property name=\"project.structure.proportion\" value=\"0.15\" />\n    <property name=\"project.structure.side.proportion\" value=\"0.2\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"CreateClassDialog.RecentsKey\">\n      <recent name=\"de.hsa.fatsquirrel.util\" />\n    </key>\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\n      <recent name=\"de.hsa.fatsquirrel.core\" />\n      <recent name=\"de.hsa.fatsquirrel.utilUi\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Application.Launcher\">\n    <configuration name=\"Launcher\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"de.hsa.fatsquirrel.Launcher\" />\n      <module name=\"SquirrelGame\" />\n      <option name=\"VM_PARAMETERS\" value=\"--module-path ${PATH_TO_FX} --add-modules javafx.controls,javafx.fxml\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"de.hsa.fatsquirrel.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"MyFavouriteCommandsProcessor\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"de.hsa.fatsquirrel.util.ui.consoletest.MyFavouriteCommandsProcessor\" />\n      <module name=\"SquirrelGame\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"de.hsa.fatsquirrel.util.ui.consoletest.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <list>\n      <item itemvalue=\"Application.Launcher\" />\n      <item itemvalue=\"Application.MyFavouriteCommandsProcessor\" />\n    </list>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.Launcher\" />\n        <item itemvalue=\"Application.MyFavouriteCommandsProcessor\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"ae02f276-41b0-412b-9c44-38dcfacc5768\" name=\"Default Changelist\" comment=\"\" />\n      <created>1618253042359</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1618253042359</updated>\n      <workItem from=\"1618253043633\" duration=\"231000\" />\n      <workItem from=\"1618402879939\" duration=\"5274000\" />\n      <workItem from=\"1618422162516\" duration=\"15000\" />\n      <workItem from=\"1618647971881\" duration=\"13020000\" />\n      <workItem from=\"1618691499774\" duration=\"115000\" />\n      <workItem from=\"1618733619581\" duration=\"9194000\" />\n      <workItem from=\"1618781302986\" duration=\"686000\" />\n      <workItem from=\"1618813542135\" duration=\"4293000\" />\n      <workItem from=\"1618817963634\" duration=\"1034000\" />\n      <workItem from=\"1618924230686\" duration=\"26851000\" />\n      <workItem from=\"1618989857014\" duration=\"9350000\" />\n      <workItem from=\"1619088167092\" duration=\"8324000\" />\n      <workItem from=\"1619165634303\" duration=\"12317000\" />\n      <workItem from=\"1619201670309\" duration=\"187000\" />\n      <workItem from=\"1619201871874\" duration=\"6424000\" />\n      <workItem from=\"1619245409798\" duration=\"6817000\" />\n      <workItem from=\"1619336526437\" duration=\"5692000\" />\n      <workItem from=\"1619345573794\" duration=\"913000\" />\n      <workItem from=\"1619362935183\" duration=\"599000\" />\n      <workItem from=\"1619379948061\" duration=\"117000\" />\n      <workItem from=\"1619424361192\" duration=\"118000\" />\n      <workItem from=\"1619424496181\" duration=\"21000\" />\n      <workItem from=\"1619430419765\" duration=\"1351000\" />\n      <workItem from=\"1619451479149\" duration=\"534000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Aufgabe 4 fast fertig, c) Teil fehlt teilweise und ADDI und ADDF geben eine Exception, es muss noch korriegiert werden\">\n      <created>1618673135712</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1618673135712</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"enum Werte umbennent, da man die GROSS schreiben soll\">\n      <created>1618742119043</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1618742119043</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"inputLoop hinzugefügt\">\n      <created>1618815786237</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1618815786237</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"switch hinzugefügt, aber ob er sich lohnt?\">\n      <created>1618817819441</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1618817819441</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Mi bewegt sich nicht, anderes ist akzeptabel\">\n      <created>1618946014336</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1618946014336</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Funktionierende Aufgabe 4\">\n      <created>1618950831388</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1618950831388</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"Teil a) nicht fertig, b) ist teilweise und c) ist unklar\">\n      <created>1619208542761</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1619208542761</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"Eingabe in multi und singetheread funktioniert falsch, gui modus liest keien Befehle ...\">\n      <created>1619424462850</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1619424462850</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"9\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"Aufgabe 4 fast fertig, c) Teil fehlt teilweise und ADDI und ADDF geben eine Exception, es muss noch korriegiert werden\" />\n    <MESSAGE value=\"enum Werte umbennent, da man die GROSS schreiben soll\" />\n    <MESSAGE value=\"inputLoop hinzugefügt\" />\n    <MESSAGE value=\"switch hinzugefügt, aber ob er sich lohnt?\" />\n    <MESSAGE value=\"Mi bewegt sich nicht, anderes ist akzeptabel\" />\n    <MESSAGE value=\"Funktionierende Aufgabe 4\" />\n    <MESSAGE value=\"Teil a) nicht fertig, b) ist teilweise und c) ist unklar\" />\n    <MESSAGE value=\"Eingabe in multi und singetheread funktioniert falsch, gui modus liest keien Befehle ...\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Eingabe in multi und singetheread funktioniert falsch, gui modus liest keien Befehle ...\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/de/hsa/fatsquirrel/core/Board.java</url>\n          <line>200</line>\n          <option name=\"timeStamp\" value=\"9\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"java-method\">\n          <url>file://$PROJECT_DIR$/src/de/hsa/fatsquirrel/core/Board.java</url>\n          <line>198</line>\n          <properties class=\"de.hsa.fatsquirrel.core.Board\" method=\"update\">\n            <option name=\"EMULATED\" value=\"true\" />\n          </properties>\n          <option name=\"timeStamp\" value=\"8\" />\n        </line-breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision dc01492abed16fdb613d2cf04dbae2ac9f219939)
++++ b/.idea/workspace.xml	(date 1619539308115)
+@@ -1,8 +1,19 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="ae02f276-41b0-412b-9c44-38dcfacc5768" name="Default Changelist" comment="Eingabe in multi und singetheread funktioniert falsch, gui modus liest keien Befehle ...">
++    <list default="true" id="ae02f276-41b0-412b-9c44-38dcfacc5768" name="Default Changelist" comment="stand: 26.04 17:45">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/Launcher$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/Launcher$2.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/Launcher.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/console/ConsoleUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/console/ConsoleUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/console/FxUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/console/FxUI$3.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/console/FxUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/console/FxUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/console/GameCommandType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/console/GameCommandType.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/console/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/console/UI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/core/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/core/Game.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/core/GameImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SquirrelGame/de/hsa/fatsquirrel/core/GameImpl.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/Launcher.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/console/FxUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/hsa/fatsquirrel/console/FxUI.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -43,9 +54,11 @@
+     <property name="node.js.detected.package.tslint" value="true" />
+     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+     <property name="node.js.selected.package.tslint" value="(autodetect)" />
++    <property name="nodejs_package_manager_path" value="npm" />
+     <property name="project.structure.last.edited" value="Modules" />
+     <property name="project.structure.proportion" value="0.15" />
+     <property name="project.structure.side.proportion" value="0.2" />
++    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+   </component>
+   <component name="RecentsManager">
+     <key name="CreateClassDialog.RecentsKey">
+@@ -60,6 +73,7 @@
+     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="de.hsa.fatsquirrel.Launcher" />
+       <module name="SquirrelGame" />
++      <option name="PROGRAM_PARAMETERS" value="single-thread" />
+       <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.controls,javafx.fxml" />
+       <extension name="coverage">
+         <pattern>
+@@ -126,7 +140,14 @@
+       <workItem from="1619424361192" duration="118000" />
+       <workItem from="1619424496181" duration="21000" />
+       <workItem from="1619430419765" duration="1351000" />
+-      <workItem from="1619451479149" duration="534000" />
++      <workItem from="1619451479149" duration="4204000" />
++      <workItem from="1619511616685" duration="87000" />
++      <workItem from="1619523714069" duration="2667000" />
++      <workItem from="1619530245165" duration="47000" />
++      <workItem from="1619530303077" duration="88000" />
++      <workItem from="1619530403046" duration="493000" />
++      <workItem from="1619530908439" duration="546000" />
++      <workItem from="1619531470190" duration="7198000" />
+     </task>
+     <task id="LOCAL-00001" summary="Aufgabe 4 fast fertig, c) Teil fehlt teilweise und ADDI und ADDF geben eine Exception, es muss noch korriegiert werden">
+       <created>1618673135712</created>
+@@ -184,7 +205,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1619424462850</updated>
+     </task>
+-    <option name="localTasksCounter" value="9" />
++    <task id="LOCAL-00009" summary="stand: 26.04 17:45">
++      <created>1619452056382</created>
++      <option name="number" value="00009" />
++      <option name="presentableId" value="LOCAL-00009" />
++      <option name="project" value="LOCAL" />
++      <updated>1619452056382</updated>
++    </task>
++    <option name="localTasksCounter" value="10" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -211,7 +239,8 @@
+     <MESSAGE value="Funktionierende Aufgabe 4" />
+     <MESSAGE value="Teil a) nicht fertig, b) ist teilweise und c) ist unklar" />
+     <MESSAGE value="Eingabe in multi und singetheread funktioniert falsch, gui modus liest keien Befehle ..." />
+-    <option name="LAST_COMMIT_MESSAGE" value="Eingabe in multi und singetheread funktioniert falsch, gui modus liest keien Befehle ..." />
++    <MESSAGE value="stand: 26.04 17:45" />
++    <option name="LAST_COMMIT_MESSAGE" value="stand: 26.04 17:45" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+Index: src/de/hsa/fatsquirrel/console/FxUI.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package de.hsa.fatsquirrel.console;\n\nimport de.hsa.fatsquirrel.core.*;\nimport de.hsa.fatsquirrel.util.ui.console.Command;\n\nimport java.awt.*;\n\nimport de.hsa.fatsquirrel.util.ui.console.ScanException;\nimport javafx.application.Platform;\nimport javafx.event.Event;\nimport javafx.event.EventHandler;\nimport javafx.scene.Parent;\nimport javafx.scene.Scene;\nimport javafx.scene.canvas.Canvas;\nimport javafx.scene.canvas.GraphicsContext;\nimport javafx.scene.control.Label;\nimport javafx.scene.input.KeyEvent;\nimport javafx.scene.layout.VBox;\nimport javafx.scene.paint.Color;\n\n\npublic class FxUI extends Scene implements UI{\n    private Canvas boardCanvas;\n    private Label msgLabel;\n    private static final int CELL_SIZE = 32;\n    private static Command puffer = null;\n\n    public FxUI(Parent parent, Canvas boardCanvas, Label msgLabel) {\n        super(parent);\n        this.boardCanvas = boardCanvas;\n        this.msgLabel = msgLabel;\n    }\n\n\n    @Override\n    public void render(final BoardView view) {\n        Platform.runLater(new Runnable() {\n            @Override\n            public void run() {\n                repaintBoardCanvas(view);\n            }\n        });\n\n\n    }\n\n    private void repaintBoardCanvas(BoardView view) {\n        GraphicsContext gc = boardCanvas.getGraphicsContext2D();\n        gc.clearRect(0, 0, boardCanvas.getWidth(), boardCanvas.getHeight());\n        XY viewSize = view.getSize();\n\n        for (int i = 0; i < viewSize.getX(); i++) {\n            for (int j = 0; j < viewSize.getY(); j++) {\n                Entity entity = view.getEntityType(i, j);\n                if (entity == null) continue;\n\n                if (entity instanceof Wall) {\n                    gc.setFill(Color.YELLOW);\n                } else if (entity instanceof GoodPlant) {\n                    gc.setFill(Color.GREEN);\n                } else if (entity instanceof BadPlant) {\n                    gc.setFill(Color.DARKRED);\n                } else if (entity instanceof GoodBeast) {\n                    gc.setFill(Color.DARKOLIVEGREEN);\n                } else if (entity instanceof BadBeast) {\n                    gc.setFill(Color.RED);\n                } else if (entity instanceof HandOperatedMasterSquirrel) {\n                    gc.setFill(Color.ROYALBLUE);\n                } else if (entity instanceof MiniSquirrel) {\n                    gc.setFill(Color.LIGHTBLUE);\n                }\n\n                gc.fillRect(entity.getPosition().getX() * CELL_SIZE,\n                        entity.getPosition().getY() * CELL_SIZE,\n                        CELL_SIZE, CELL_SIZE);\n            }\n        }\n\n    }\n\n    @Override\n    public Command getCommand() {\n        Command command = puffer;\n        puffer = null;\n        return command;\n    }\n\n    @Override\n    public void message(final String message) {\n        Platform.runLater(new Runnable() {\n            @Override\n            public void run() {\n                msgLabel.setText(message);\n            }\n        });\n\n\n    }\n    public static FxUI createInstance(XY boardSize) {\n        Canvas boardCanvas = new Canvas(boardSize.getX() * CELL_SIZE, boardSize.getY() * CELL_SIZE);\n        Label statusLabel = new Label();\n        VBox top = new VBox();\n        top.getChildren().add(boardCanvas);\n        top.getChildren().add(statusLabel);\n        statusLabel.setText(\"Go Squirrel!\");\n        final FxUI fxUI = new FxUI(top, boardCanvas, statusLabel);\n        fxUI.setOnKeyPressed(\n                new EventHandler<KeyEvent>() {\n                    @Override\n                    public void handle(KeyEvent event) {\n                        System.out.println(\"Es wurde folgende Taste gedrueckt: \" + event.getCode() + \" bitte behandeln!\");\n                        if (event.getText().equals(\"w\")) {\n                            puffer = new Command(GameCommandType.UP, null);\n                        }\n                        if (event.getText().equals(\"a\")) {\n                            puffer = new Command(GameCommandType.LEFT, null);\n                        }\n                        if (event.getText().equals(\"s\")) {\n                            puffer = new Command(GameCommandType.DOWN, null);\n                        }\n                        if (event.getText().equals(\"d\")) {\n                            puffer = new Command(GameCommandType.RIGHT, null);\n                        }\n                        if (event.getText().equals(\"e\")) {\n                            puffer = new Command(GameCommandType.MASTER_ENERGY, null);\n                        }\n                        if (event.getText().equals(\"f\")) {\n                        \tpuffer = new Command(GameCommandType.SPAWN_MINI_FX, null);\n                        }\n                    }\n                }\n        );\n        return fxUI;\n    }\n\n\n\n    @Override\n    public void inputLoop() {\n\n//        while (true) {\n//            try {\n//                puffer = commandScanner.next();\n//            } catch (ScanException e) {\n//                System.out.println(e.getMessage());\n//            }\n//        }\n\n    }\n\n\n\t@Override\n\tpublic void singleThreadInput() {\n\t\t// TODO Auto-generated method stub\n\t\t\n\t}\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/de/hsa/fatsquirrel/console/FxUI.java b/src/de/hsa/fatsquirrel/console/FxUI.java
+--- a/src/de/hsa/fatsquirrel/console/FxUI.java	(revision dc01492abed16fdb613d2cf04dbae2ac9f219939)
++++ b/src/de/hsa/fatsquirrel/console/FxUI.java	(date 1619535507988)
+@@ -138,13 +138,6 @@
+     @Override
+     public void inputLoop() {
+ 
+-//        while (true) {
+-//            try {
+-//                puffer = commandScanner.next();
+-//            } catch (ScanException e) {
+-//                System.out.println(e.getMessage());
+-//            }
+-//        }
+ 
+     }
+ 
